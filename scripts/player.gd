@@ -6,11 +6,14 @@ const JUMP_VELOCITY = 5
 var health : int = 5
 var damage : int = 1
 var isMasked : bool = false
+var mask_fragments: int = 0
+var collected_fragments_ids: Array = []
 
 @onready var maskTimer = $Timer
 
 func _ready() -> void:
-	maskTimer.timeout.connect(Callable(self, "maskWorn").bind(1))
+	pass
+	#maskTimer.timeout.connect(Callable(self, "maskWorn").bind(1))
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -50,3 +53,14 @@ func game_over() -> void:
 	emit_signal("Game Over")
 
 	# Implement game over logic here (e.g., restart level, show game over screen, etc.)
+	
+	
+func add_mask_fragment(id: int):
+	mask_fragments += 1
+	collected_fragments_ids.append(id)
+	print("Fragment collected! Total: ", mask_fragments)
+	update_player_power()
+
+func update_player_power():
+	# Add your power-up logic here
+	pass
