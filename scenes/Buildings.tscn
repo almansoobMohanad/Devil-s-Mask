@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c45yjsubm518o"]
+
+[ext_resource type="PackedScene" uid="uid://vd8peoi6xnky" path="res://scenes/level_1.tscn" id="1_uiaec"]
+[ext_resource type="PackedScene" uid="uid://cnsuyrp8d8i7k" path="res://Assets/CHAINEDPILLAR.fbx" id="3_cl68u"]
+[ext_resource type="PackedScene" uid="uid://cmqetusgxld7y" path="res://Assets/GazingPillar.fbx" id="4_xtqvv"]
+[ext_resource type="ArrayMesh" uid="uid://c2wnhrwe4waln" path="res://Assets/TOWER_1.obj" id="5_4ew63"]
+[ext_resource type="Texture2D" uid="uid://bc7n6igolvnso" path="res://Assets/ALF_d2.dds" id="5_bi3nv"]
+[ext_resource type="Texture2D" uid="uid://0x403vbqvbb8" path="res://Assets/PAK_d2.tga" id="7_bi3nv"]
+[ext_resource type="ArrayMesh" uid="uid://c7pwejihlltf" path="res://Assets/DEMONICPILLAR1.obj" id="7_p24lo"]
+[ext_resource type="ArrayMesh" uid="uid://jf3st5g1hhih" path="res://Assets/BASTARDSWORD_DEMONIC.obj" id="9_6khxn"]
+[ext_resource type="PackedScene" uid="uid://c11s775kn1s0h" path="res://Assets/Templebuilding1.fbx" id="9_7mr7b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dv2v8"]
+albedo_texture = ExtResource("5_bi3nv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p24lo"]
+albedo_texture = ExtResource("7_bi3nv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3iti4"]
+albedo_texture = ExtResource("7_bi3nv")
+
+[node name="Node3D" type="Node3D" unique_id=1699701613]
+
+[node name="Level 1" parent="." unique_id=294888273 instance=ExtResource("1_uiaec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11421406, 1.7688828, -0.46833992)
+
+[node name="CHAINEDPILLAR" parent="." unique_id=460504865 instance=ExtResource("3_cl68u")]
+transform = Transform3D(17.23408, 0, 0, 0, 17.23408, 0, 0, 0, 17.23408, -12.854477, 3.7378006, -12.043235)
+
+[node name="GazingPillar" parent="." unique_id=1048825329 instance=ExtResource("4_xtqvv")]
+transform = Transform3D(86.88136, 0, 0, 0, 86.88136, 0, 0, 0, 86.88136, -1.6794443, 5.916651, -13.951669)
+
+[node name="GazingPillar2" parent="." unique_id=1041438591 instance=ExtResource("4_xtqvv")]
+transform = Transform3D(86.47277, 0, 0, 0, 86.47277, 0, 0, 0, 86.47277, 8.245961, 6.1605415, -13.880322)
+
+[node name="Tower1" type="MeshInstance3D" parent="." unique_id=411853105]
+transform = Transform3D(2.0030086, 0, 0, 0, 2.0030086, 0, 0, 0, 2.0030086, 24.104393, 0.16321039, -13.458952)
+material_override = SubResource("StandardMaterial3D_dv2v8")
+mesh = ExtResource("5_4ew63")
+
+[node name="Demonicpillar1" type="MeshInstance3D" parent="." unique_id=1723569541]
+transform = Transform3D(0.4698069, 0, 0, 0, 0.4698069, 0, 0, 0, 0.4698069, 15.849382, 4.2619762, -13.275079)
+material_override = SubResource("StandardMaterial3D_p24lo")
+mesh = ExtResource("7_p24lo")
+
+[node name="BastardswordDemonic" type="MeshInstance3D" parent="." unique_id=1600970343]
+transform = Transform3D(0.111827835, 0, 0, 0, 0.03853617, 0, 0, 0, 0.4172524, 11.894229, 3.8181543, -13.565331)
+material_override = SubResource("StandardMaterial3D_3iti4")
+mesh = ExtResource("9_6khxn")
+
+[node name="Templebuilding2" parent="." unique_id=1993098660 instance=ExtResource("9_7mr7b")]
+transform = Transform3D(15.668405, 0, 0, 0, 15.668405, 0, 0, 0, 15.668405, 17.21414, 6.574606, 9.761246)
