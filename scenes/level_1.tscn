@@ -19,6 +19,14 @@ albedo_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_hbghi"]
 size = Vector3(60, 1, 30)
 
+[sub_resource type="Curve3D" id="Curve3D_e3sih"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.4396133, -1.341166, 2.556178, 0, 0, 0, 0, 0, 0, 17.133514, 0.46321964, 6.608884),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [node name="Level 1" type="Node3D" unique_id=294888273]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1029287567]
@@ -66,3 +74,11 @@ fragment_id = 5
 
 [node name="Enemy" parent="Enemies" unique_id=1293850703 instance=ExtResource("9_e3sih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.607176, 3.0741343, 0)
+path_follow_path = NodePath("../../Path3D/PathFollow3D")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=823337609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.85254, 2.9627671, 0)
+curve = SubResource("Curve3D_e3sih")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=813714023]
+transform = Transform3D(-0.30413944, -0.12783019, -0.9440104, 7.450576e-09, 0.9909527, -0.1341872, 0.95262694, -0.040811576, -0.30138844, 4.4396133, -1.341166, 2.556178)
