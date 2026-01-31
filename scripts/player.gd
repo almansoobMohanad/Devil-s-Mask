@@ -52,6 +52,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage(amount: int) -> void:
+	print("Player took ", amount, " damage!")
 	health -= amount
 	if health <= 0:
 		game_over()
@@ -74,6 +75,7 @@ func armPlayer() -> void:
 	isArmed = true
 	
 func game_over() -> void:
+	print("Game Over!")
 	emit_signal("Game Over")
 
 	# Implement game over logic here (e.g., restart level, show game over screen, etc.)
