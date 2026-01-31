@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bqncsj525jkj5"
-path="res://.godot/imported/MAN animation jump.glb-b0709e2cd8c21f03c4b8528e01eca420.scn"
+uid="uid://ctga8x8mqs040"
+path="res://.godot/imported/Man animation breathing.glb-0bc805a11e8994097a73f4babbe4ce2e.scn"
 
 [deps]
 
-source_file="res://3d models/gltf files/MAN animation jump.glb"
-dest_files=["res://.godot/imported/MAN animation jump.glb-b0709e2cd8c21f03c4b8528e01eca420.scn"]
+source_file="res://3d models/player/Man animation breathing.glb"
+dest_files=["res://.godot/imported/Man animation breathing.glb-0bc805a11e8994097a73f4babbe4ce2e.scn"]
 
 [params]
 
@@ -39,11 +39,11 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "animations": {
-"metarig_001Action": {
+"metarigAction_001": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://3d models/player/animation/metarig_walking.res",
+"save_to_file/fallback_path": "res://3d models/player/animation/metarigAction_breathing.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://b3tbkctj287bg",
+"save_to_file/path": "uid://dadw5y0yb6nmh",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

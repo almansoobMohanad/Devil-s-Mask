@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8u08hxb1x0vm"
-path.s3tc="res://.godot/imported/MAN animation breathing_Frame 3.png-20075498bd2ae592a7e34555f62c17ba.s3tc.ctex"
+uid="uid://bxv320ja4qsdw"
+path.s3tc="res://.godot/imported/MAN animation wearing a mask111_Frame 3.png-fe7db04557811b36152b7060f3bbbc57.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://3d models/gltf files/MAN animation breathing_Frame 3.png"
-dest_files=["res://.godot/imported/MAN animation breathing_Frame 3.png-20075498bd2ae592a7e34555f62c17ba.s3tc.ctex"]
+source_file="res://3d models/gltf files/MAN animation wearing a mask111_Frame 3.png"
+dest_files=["res://.godot/imported/MAN animation wearing a mask111_Frame 3.png-fe7db04557811b36152b7060f3bbbc57.s3tc.ctex"]
 
 [params]
 
