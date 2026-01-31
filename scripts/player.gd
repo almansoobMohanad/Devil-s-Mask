@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 const SPEED = 10.0
-const JUMP_VELOCITY = 40
+const JUMP_VELOCITY = 20
 const MASK_MULTIPLIER = 1
 var health : int = 5
 var damage : int = 1
@@ -21,7 +21,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta * 7
+		velocity += get_gravity() * delta * 5
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

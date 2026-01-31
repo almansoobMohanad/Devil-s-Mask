@@ -5,7 +5,7 @@
 [node name="Level2" type="Node3D" unique_id=1056840371]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1926764357]
-transform = Transform3D(-0.8660254, -0.50000006, -2.1855696e-08, 0, -4.371139e-08, 1, -0.50000006, 0.8660254, 3.7855173e-08, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.50000006, -2.1855696e-08, 0, -4.371139e-08, 1, -0.50000006, 0.8660254, 3.7855173e-08, 0.14321852, 0, -0.74865437)
 light_color = Color(0.45674866, 0.43188372, 0.4251778, 1)
 light_energy = 6.45
 shadow_enabled = true
@@ -17,22 +17,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.705, 0)
 transform = Transform3D(-1.2430428, 0, -5.081416, 0, 0.8, 0, 5.3416595, 0, -1.1824822, 12.214283, 2.3875003, -56.144287)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Bridge" unique_id=1638508307]
-transform = Transform3D(-0.24795985, 0, 1.0655442, 0, 1.2499998, 0, -1.1201159, 0, -0.26065907, 10.458111, -0.10937548, -0.098375)
+transform = Transform3D(-0.17357183, 0, 0.74588054, 0, 1.2499986, 0, -0.7840811, 0, -0.18246123, 10.324444, -0.10937548, -0.11072995)
 use_collision = true
 size = Vector3(2, 4.6, 2)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Bridge" unique_id=164435087]
-transform = Transform3D(-0.24795985, 0, 1.0655442, 0, 1.2499998, 0, -1.1201159, 0, -0.26065907, 0.86821175, -0.10937548, 2.2475567)
+transform = Transform3D(-0.17357183, 0, 0.74588054, 0, 1.2499986, 0, -0.7840811, 0, -0.18246123, 3.6115189, -0.10937548, 1.5314218)
 use_collision = true
 size = Vector3(2, 4.6, 2)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Bridge" unique_id=17135522]
-transform = Transform3D(-0.24795985, 0, 1.0655442, 0, 1.2499998, 0, -1.1201159, 0, -0.26065907, 5.4322934, 1.8281243, 1.1310669)
+transform = Transform3D(-0.17357183, 0, 0.74588054, 0, 1.2499986, 0, -0.7840811, 0, -0.18246123, 6.8063745, 1.8281243, 0.7498786)
 use_collision = true
 size = Vector3(1.5, 0.90000004, 7.9)
 
 [node name="Basalt Pillar" type="CSGCylinder3D" parent="." unique_id=1968874491]
-transform = Transform3D(-1.2430428, 0, -5.081416, 0, 0.8, 0, 5.3416595, 0, -1.1824822, 12.214283, 2.3875003, -56.144287)
+transform = Transform3D(-0.82000995, 0, -3.8412194, 0, 0.8, 0, 3.5237834, 0, -0.8938795, 8.693214, -0.71249986, -40.049652)
 use_collision = true
 radius = 1.0
 height = 16.16875
@@ -42,49 +42,49 @@ sides = 6
 transform = Transform3D(-4.0461783, 0, -16.541033, 0, 5, 0, 17.387419, 0, -3.8492184, 35.714287, 4.2498665, -69.524284)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Basalt Cluster" unique_id=477447877]
-transform = Transform3D(0.9999999, 0, -1.4901161e-08, 0, 0.99999994, 0, 1.4901161e-08, 0, 0.99999994, 0.5292158, 0, -0.12945414)
+transform = Transform3D(0.6596795, 0, 0, 0, 0.99999994, 0, 4.4703484e-08, 0, 0.7559348, 1.6017551, -1.2800001, 0.24726796)
 use_collision = true
 height = 4.7
 sides = 6
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Basalt Cluster" unique_id=1930713150]
-transform = Transform3D(0.53333336, 0, -7.450581e-09, 0, 0.5333333, 0, 2.2351742e-08, 0, 0.53333324, 0.9445455, -0.76, 0.041835785)
+transform = Transform3D(0.3518291, 0, 4.4703484e-08, 0, 0.5333333, 0, 2.2351742e-08, 0, 0.40316537, 1.8924863, -2.0400002, 0.3671713)
 use_collision = true
 height = 5.55
 sides = 6
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Basalt Cluster" unique_id=1839179260]
-transform = Transform3D(0.53333336, 0, -7.450581e-09, 0, 0.5333333, 0, 2.2351742e-08, 0, 0.53333324, 0.77678514, -0.32666677, -0.2739818)
+transform = Transform3D(0.3518291, 0, 4.4703484e-08, 0, 0.5333333, 0, 2.2351742e-08, 0, 0.40316537, 1.7750537, -1.6066668, 0.1460982)
 use_collision = true
 height = 7.175
 sides = 6
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=719272382]
-transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, 60.214287, 2.7999992, -56.164288)
+transform = Transform3D(4.2, 0, 0, 0, 1, 0, 0, 0, 4.2, 42.293213, -3.6000009, -40.063656)
 use_collision = true
 size = Vector3(2, 27.800001, 2)
 
 [node name="Basalt Pillar2" type="CSGCylinder3D" parent="." unique_id=803983356]
-transform = Transform3D(1.5943229, 0, -4.991876, 0, 0.7999999, 0, 5.247534, 0, 1.5166483, 77.81429, 3.227656, -55.144287)
+transform = Transform3D(1.2358128, 0, -3.2486062, 0, 0.7999999, 0, 4.0675383, 0, 0.9870023, 54.61322, -3.1723442, -39.349655)
 use_collision = true
 radius = 1.0
 height = 34.373047
 sides = 6
 
 [node name="Basalt Pillar3" type="CSGCylinder3D" parent="." unique_id=1168015091]
-transform = Transform3D(1.5943229, 0, -4.991876, 0, 0.7999999, 0, 5.247534, 0, 1.5166483, 94.21429, 3.227656, -55.144287)
+transform = Transform3D(1.2358128, 0, -3.2486062, 0, 0.7999999, 0, 4.0675383, 0, 0.9870023, 66.093216, -3.1723442, -39.349655)
 use_collision = true
 radius = 1.0
 height = 34.373047
 sides = 6
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=454643418]
-transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, 85.899994, 14.699999, -59.099995)
+transform = Transform3D(4.2, 0, 0, 0, 1, 0, 0, 0, 4.2, 60.27321, 8.299998, -42.11865)
 use_collision = true
 size = Vector3(0.4, 37.3, 2.7)
 
 [node name="Mask Shrine" type="CSGBox3D" parent="." unique_id=1039123397]
-transform = Transform3D(5.999984, 0, -2.3841858e-07, 0, 0.9999205, 0, 3.8146973e-06, 0, 5.999996, 111.214294, 15.9, -110.6643)
+transform = Transform3D(4.199987, 0, -1.6689305e-07, 0, 0.9999205, 0, 2.6702871e-06, 0, 4.1999984, 77.99322, 9.499999, -78.21366)
 use_collision = true
 size = Vector3(2, 4.6, 2.4)
 
@@ -112,11 +112,11 @@ size = Vector3(1, 1, 2.7)
 transform = Transform3D(-1.2430428, 0, -5.081416, 0, 0.8, 0, 5.3416595, 0, -1.1824822, 113.814285, 15.387501, -119.2443)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Bridge2" unique_id=2087649981]
-transform = Transform3D(-0.24795981, 0, 1.065544, 0, 1.2499993, 0, -1.1201158, 0, -0.260659, 11.434185, -0.10937691, -2.2854242)
+transform = Transform3D(-0.17357184, 0, 0.7458802, 0, 1.2499976, 0, -0.7840809, 0, -0.18246116, 15.629111, -8.109377, 3.2261515)
 use_collision = true
 size = Vector3(2, 4.6, 2)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Bridge2" unique_id=2108775761]
-transform = Transform3D(-0.24795981, 0, 1.065544, 0, 1.2499993, 0, -1.1201158, 0, -0.260659, 6.408367, 1.8281212, -1.0559826)
+transform = Transform3D(-0.17357184, 0, 0.7458802, 0, 1.2499976, 0, -0.7840809, 0, -0.18246116, 12.111044, -6.171878, 4.0867596)
 use_collision = true
 size = Vector3(1.5, 0.90000004, 7.9)
