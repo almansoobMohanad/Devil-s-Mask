@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://fsnjse6ai71m" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://8f1ant6w1d1w" path="res://3d models/player/MAN animation breathing_Frame 3.png" id="2_tuyoq"]
 [ext_resource type="Animation" uid="uid://dadw5y0yb6nmh" path="res://3d models/player/animation/metarigAction_breathing.res" id="3_fjrip"]
-[ext_resource type="Animation" uid="uid://4kw3wg1v8x3q" path="res://3d models/player/animation/Cube_001Action.res" id="3_y4r1p"]
-[ext_resource type="Animation" uid="uid://bedwhl1xy1btp" path="res://3d models/player/animation/metarigAction.res" id="4_d2wvv"]
+[ext_resource type="Animation" uid="uid://br1iy685j08gu" path="res://3d models/player/animation/Cube_001Action.res" id="3_y4r1p"]
+[ext_resource type="Animation" uid="uid://c3yph8tgybkqx" path="res://3d models/player/animation/metarigAction.res" id="4_d2wvv"]
 [ext_resource type="Animation" uid="uid://ca72677d0dknr" path="res://3d models/player/animation/metarigAction_fighting.res" id="4_smehm"]
 [ext_resource type="Animation" uid="uid://b8n4vew22gf6m" path="res://3d models/player/animation/metarigAction_run.res" id="5_fjrip"]
 [ext_resource type="Animation" uid="uid://ck8tgpq2ft1t2" path="res://3d models/player/animation/metarig_jumping.res" id="5_ur7pv"]
@@ -520,7 +520,8 @@ visible = false
 mesh = SubResource("CapsuleMesh_ihfcg")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1000946569]
-transform = Transform3D(1, 0, 0, 0, 0.9755652, 0.21971, 0, -0.21971, 0.9755652, 0.49946117, 3.811098, 8.95916)
+transform = Transform3D(1, 0, 0, 0, 0.73692346, 0.6759762, 0, -0.6759762, 0.73692346, 0, 9.717, 8.959)
+size = 18.969
 
 [node name="Man" type="Node3D" parent="." unique_id=1805602241]
 transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, 0, 0, 0.098)
