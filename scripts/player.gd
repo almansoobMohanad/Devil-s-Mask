@@ -3,8 +3,12 @@ extends CharacterBody3D
 
 const SPEED = 10.0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 const JUMP_VELOCITY = 5
 const MASK_MULTIPLIER = 1
+=======
+const JUMP_VELOCITY = 40
+>>>>>>> Stashed changes
 =======
 const JUMP_VELOCITY = 40
 >>>>>>> Stashed changes
@@ -82,6 +86,7 @@ func game_over() -> void:
 
 	# Implement game over logic here (e.g., restart level, show game over screen, etc.)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	
 	
 func add_mask_fragment(id: int):
@@ -93,5 +98,7 @@ func add_mask_fragment(id: int):
 func update_player_power():
 	# Add your power-up logic here
 	pass
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
