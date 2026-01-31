@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://vd8peoi6xnky"]
+
+[ext_resource type="Script" uid="uid://fsnjse6ai71m" path="res://scripts/player.gd" id="1_bswci"]
+[ext_resource type="PackedScene" uid="uid://bt7tw50td7wv4" path="res://3d models/mask.blend" id="2_rus8k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ilcil"]
+size = Vector3(20, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hls8"]
+albedo_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hbghi"]
+size = Vector3(60, 1, 30)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hn12h"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ihfcg"]
+
+[node name="Level 1" type="Node3D" unique_id=294888273]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1029287567]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=853582655]
+shape = SubResource("BoxShape3D_ilcil")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1181248789]
+material_override = SubResource("StandardMaterial3D_3hls8")
+mesh = SubResource("BoxMesh_hbghi")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1437414297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6139975, 0)
+script = ExtResource("1_bswci")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=883996887]
+shape = SubResource("CapsuleShape3D_hn12h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=907020864]
+mesh = SubResource("CapsuleMesh_ihfcg")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1756608855]
+transform = Transform3D(1, 0, 0, 0, 0.9755652, 0.21971, 0, -0.21971, 0.9755652, 0.49946117, 3.811098, 8.95916)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1737187435]
+transform = Transform3D(1, 0, 0, 0, 0.10701033, 0.9942579, 0, -0.9942579, 0.10701033, -13.739376, 16.59112, -2.4024386)
+
+[node name="mask" parent="." unique_id=1623862910 instance=ExtResource("2_rus8k")]
+transform = Transform3D(-0.9998096, 0, 0.019511566, 0, 1, 0, -0.019511566, 0, -0.9998096, 1.6192102, 0, 11.700108)
