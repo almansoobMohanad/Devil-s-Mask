@@ -2,6 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_huvaw"]
 [ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_6malg"]
+[ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="3_x7blo"]
+[ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="4_qsmat"]
+[ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="5_yk4f3"]
+[ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="6_cp0rv"]
+[ext_resource type="PackedScene" uid="uid://vo7vcx1g8mpl" path="res://scenes/mask_fragment5.tscn" id="7_rr1tt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6malg"]
 albedo_texture = ExtResource("2_6malg")
@@ -20,8 +25,11 @@ albedo_texture = ExtResource("2_6malg")
 
 [node name="Node3D" type="Node3D" unique_id=263277631]
 
-[node name="Player" parent="." unique_id=1256405127 instance=ExtResource("1_huvaw")]
+[node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") groups=["player"] instance=ExtResource("1_huvaw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 11.8, -99.299995)
+main_world = NodePath("../Main")
+masked_world = NodePath("../Masked")
+unmasked_world = NodePath("../Unmasked")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=895080255]
 transform = Transform3D(-0.83651626, -0.48296294, -0.258819, -0.22414388, -0.12940958, 0.9659259, -0.50000006, 0.8660255, 3.3260154e-08, 0.14321852, 0, 8.151346)
@@ -582,3 +590,23 @@ size = Vector3(0.3, 1, 0.3)
 transform = Transform3D(24.75, 0, 0, 0, 1.5, 0, 0, 0, 23.1, 14.5, 16.55, -100)
 use_collision = true
 size = Vector3(0.3, 1, 0.3)
+
+[node name="MaskFragment1" parent="." unique_id=2051958364 instance=ExtResource("3_x7blo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.563278, 11.38166, -103.49132)
+fragment_id = 1
+
+[node name="MaskFragment2" parent="." unique_id=1560759043 instance=ExtResource("4_qsmat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0441146, 11.490699, -104.134415)
+fragment_id = 2
+
+[node name="MaskFragment3" parent="." unique_id=1187035025 instance=ExtResource("5_yk4f3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5752478, 11.490699, -104.134415)
+fragment_id = 3
+
+[node name="MaskFragment4" parent="." unique_id=13929029 instance=ExtResource("6_cp0rv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.946925, 11.490699, -100.67251)
+fragment_id = 4
+
+[node name="MaskFragment5" parent="." unique_id=1292127674 instance=ExtResource("7_rr1tt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5752478, 11.490699, -100.67251)
+fragment_id = 5

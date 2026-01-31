@@ -29,6 +29,7 @@ var can_world_transform : bool = true
 @onready var maskTimer = $Timer
 @onready var anim_player = $Man/AnimationPlayer
 @onready var model = $Man  # Reference to the visual model
+@onready var mask_node = $Man/mask  # Reference to the mask container
 
 func _ready() -> void:
 	# Connect to animation finished signal
@@ -37,6 +38,9 @@ func _ready() -> void:
 	# Add to player group if not already
 	if not is_in_group("player"):
 		add_to_group("player")
+	
+	# Initialize mask visibility
+	update_mask_visibility()
 	
 	# Initialize worlds
 	update_world_visibility()
@@ -74,7 +78,7 @@ func _physics_process(delta: float) -> void:
 		
 	# Handle Attack (if armed)
 	if Input.is_action_just_pressed("attack") and isArmed:
-		anim_player.play("Global/metarigAction_fighting")
+		anim_player.play("Global/metarigAction_fighting", -1, 4)
 		var enemies_node = get_parent().get_node_or_null("Enemies") # Assuming all enemies are children of a node named "Enemies"
 		
 		if enemies_node: 
@@ -261,10 +265,34 @@ func add_mask_fragment(id: int):
 	mask_fragments += 1
 	collected_fragments_ids.append(id)
 	print("Fragment collected! Total: ", mask_fragments, " (", mask_fragments * FRAGMENT_TIME, " seconds available)")
+	update_mask_visibility()
 	update_player_power()
 
 func update_player_power():
 	pass
+
+func update_mask_visibility():
+	if not mask_node:
+		print("ERROR: mask_node is null!")
+		return
+	
+	print("Updating mask visibility. Fragments: ", mask_fragments)
+	
+	# Hide all masks first
+	for i in range(1, 6):
+		var mask_piece = mask_node.get_node_or_null("mask_" + str(i))
+		if mask_piece and mask_piece is MeshInstance3D:
+			mask_piece.visible = false
+			print("Hiding mask_", i)
+		else:
+			print("Could not find mask_", i)
+	
+	# Show masks based on fragment count (1 fragment = mask_1, 2 = mask_2, etc.)
+	for i in range(1, min(mask_fragments + 1, 6)):
+		var mask_piece = mask_node.get_node_or_null("mask_" + str(i))
+		if mask_piece and mask_piece is MeshInstance3D:
+			mask_piece.visible = true
+			print("Showing mask_", i)
 
 func get_remaining_transform_time() -> float:
 	return transform_timer

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_3bmlt"]
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_b4j7a"]
 [ext_resource type="Texture2D" uid="uid://1qhwr531tuo7" path="res://Assets/rogland_clear_night_4k.exr" id="2_pbc48"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="4_6cvei"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_eqxsl"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_6cvei"]
@@ -190,6 +191,9 @@ use_collision = true
 radius = 0.6
 height = 16.435938
 sides = 6
+
+[node name="Enemy" parent="Unmasked" unique_id=1293850703 instance=ExtResource("4_6cvei")]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 16.700146, 9.5, 1.5168896)
 
 [node name="Masked" type="Node3D" parent="." unique_id=365929474]
 
