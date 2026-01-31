@@ -5,7 +5,7 @@ const SIGHT_RANGE := 20.0
 const VIEW_ANGLE := 120.0
 @onready var ray = $VisionRayCast
 @onready var vision_area = $VisionArea
-@onready var path_follow = $PathFollow3D
+#@onready var path_follow = $PathFollow3D
 
 @onready var debug_line = $DebugLine
 
@@ -79,7 +79,7 @@ func _physics_process(delta: float) -> void:
 
 func get_player_in_sight() -> CharacterBody3D:
 	for body in vision_area.get_overlapping_bodies():
-		print("Overlapping body: ", body.name)
+		# print("Overlapping body: ", body.name)
 		if body.name == "Player":
 			return body
 	return null
@@ -110,6 +110,7 @@ func go_to_player(player_position: Vector3) -> void:
 	move_and_slide()
 
 func take_damage(amount: int) -> void:
+	print("Enemy took ", amount, " damage!")
 	health -= amount
 	if health <= 0:
 		die()

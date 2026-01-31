@@ -4,13 +4,15 @@ extends CharacterBody3D
 const SPEED = 10.0
 const JUMP_VELOCITY = 20
 const MASK_MULTIPLIER = 1
+const ATTACK_DISTANCE = 10 
+
 var health : int = 5
 var damage : int = 1
 var maskLevel : int = 1
 var isMasked : bool = false
 var mask_fragments: int = 0
 var collected_fragments_ids: Array = []
-var isArmed : bool = false
+var isArmed : bool = true
 
 @onready var maskTimer = $Timer
 
@@ -31,11 +33,18 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("mask_wear"):
 		maskWorn()
 
-	# Handle Attack
+	# Handle Attack (if armed)
 	if Input.is_action_just_pressed("attack") and isArmed:
-		for enemy in get_parent().get_node("Enemies").get_children():
-			if global_transform.origin.distance_to(enemy.global_transform.origin) < 3.0:
-				enemy.take_damage(deal_damage())
+		var enemies_node = get_parent().get_node_or_null("Enemies") # Assuming all enemies are children of a node named "Enemies"
+		
+		if enemies_node: 
+			for enemy in enemies_node.get_children():
+				if enemy is CharacterBody3D:
+					attack(enemy)
+		else:
+			var enemy = get_parent().get_node_or_null("Enemy")
+			if enemy and enemy is CharacterBody3D:
+				attack(enemy)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -56,6 +65,12 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	if health <= 0:
 		game_over()
+
+func attack(enemy: CharacterBody3D) -> void:
+	print("Checking enemy: ", enemy.name)
+	if global_transform.origin.distance_to(enemy.global_transform.origin) < ATTACK_DISTANCE:
+		print("Attacking enemy: ", enemy.name)
+		enemy.take_damage(deal_damage())
 
 func deal_damage() -> int:
 	return damage

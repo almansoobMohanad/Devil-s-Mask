@@ -62,5 +62,7 @@ fragment_id = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.138526, 1.7267308, 9.470718)
 fragment_id = 5
 
-[node name="Enemy" parent="." unique_id=1293850703 instance=ExtResource("9_e3sih")]
+[node name="Enemies" type="Node3D" parent="." unique_id=991316046]
+
+[node name="Enemy" parent="Enemies" unique_id=1293850703 instance=ExtResource("9_e3sih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.607176, 3.0741343, 0)
