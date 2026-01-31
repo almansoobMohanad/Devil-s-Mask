@@ -17,6 +17,14 @@ albedo_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_hbghi"]
 size = Vector3(60, 1, 30)
 
+[sub_resource type="Curve3D" id="Curve3D_e3sih"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.4396133, -1.341166, 2.556178, 0, 0, 0, 0, 0, 0, 17.133514, 0.46321964, 6.608884),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [node name="Level 1" type="Node3D" unique_id=294888273]
 
 [node name="Main" type="Node3D" parent="." unique_id=1876170806]
@@ -61,8 +69,3 @@ fragment_id = 5
 
 [node name="Enemy" parent="Enemies" unique_id=1293850703 instance=ExtResource("9_e3sih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.607176, 3.0741343, 0)
-
-[node name="Unmasked" type="Node3D" parent="." unique_id=1813390780]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.607176, 3.0741343, 0)
-
-[node name="Masked" type="Node3D" parent="." unique_id=1409195603]
