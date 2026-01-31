@@ -19,6 +19,10 @@ run/main_scene="res://scenes/level_1.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="GameJam"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
