@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://vd8peoi6xnky"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_014kd"]
-[ext_resource type="PackedScene" uid="uid://tyrbcq7pv8tg" path="res://3d models/MAN.blend" id="2_bswci"]
-[ext_resource type="PackedScene" uid="uid://bt7tw50td7wv4" path="res://3d models/mask.blend" id="2_rus8k"]
 [ext_resource type="PackedScene" uid="uid://vo7vcx1g8mpl" path="res://scenes/mask_fragment5.tscn" id="4_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_15mv3"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_e3sih"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="7_2os1m"]
-[ext_resource type="PackedScene" uid="uid://c7onnyw72ot4a" path="res://scenes/enemy.tscn" id="9_e3sih"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="9_e3sih"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ilcil"]
 size = Vector3(60, 1, 30)
@@ -29,6 +27,9 @@ point_count = 2
 
 [node name="Level 1" type="Node3D" unique_id=294888273]
 
+[node name="Main" type="Node3D" parent="." unique_id=1876170806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.607176, 3.0741343, 0)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1029287567]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=853582655]
@@ -43,12 +44,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6139975, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1737187435]
 transform = Transform3D(1, 0, 0, 0, 0.10701033, 0.9942579, 0, -0.9942579, 0.10701033, -13.739376, 16.59112, -2.4024386)
-
-[node name="MAN" parent="." unique_id=1360796788 instance=ExtResource("2_bswci")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4518297, -1.1627502, -6.644657)
-
-[node name="mask" parent="." unique_id=558854845 instance=ExtResource("2_rus8k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1500008, 4.6474133, 28.904434)
 
 [node name="MaskFragment1" parent="." unique_id=2051958364 instance=ExtResource("4_15mv3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.617692, 6.651907)
@@ -74,11 +69,3 @@ fragment_id = 5
 
 [node name="Enemy" parent="Enemies" unique_id=1293850703 instance=ExtResource("9_e3sih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.607176, 3.0741343, 0)
-path_follow_path = NodePath("../../Path3D/PathFollow3D")
-
-[node name="Path3D" type="Path3D" parent="." unique_id=823337609]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.85254, 2.9627671, 0)
-curve = SubResource("Curve3D_e3sih")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=813714023]
-transform = Transform3D(-0.30413944, -0.12783019, -0.9440104, 7.450576e-09, 0.9909527, -0.1341872, 0.95262694, -0.040811576, -0.30138844, 4.4396133, -1.341166, 2.556178)
