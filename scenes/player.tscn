@@ -22,3 +22,5 @@ transform = Transform3D(1, 0, 0, 0, 0.9755652, 0.21971, 0, -0.21971, 0.9755652, 
 
 [node name="MAN" parent="." unique_id=1350930288 instance=ExtResource("2_g2els")]
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -0.016362906, -1.7809356, 0.06126833)
+
+[node name="Timer" type="Timer" parent="." unique_id=293863627]
