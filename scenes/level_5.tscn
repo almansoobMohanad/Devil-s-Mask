@@ -198,9 +198,9 @@ use_collision = true
 size = Vector3(43.755096, 2.9990234, 10)
 
 [node name="CSGBox3D77" type="CSGBox3D" parent="Main" unique_id=1079593060]
-transform = Transform3D(1.7714823, 0, 0, 0, 2, 0, 0, 0, 0.08978826, 315.461, -8.537155, -23.852198)
+transform = Transform3D(1.7714823, 0, 0, 0, 2, 0, 0, 0, 0.08978826, 295.1745, -8.537155, -23.852198)
 use_collision = true
-size = Vector3(43.755096, 2.9990234, 10)
+size = Vector3(20.85167, 2.9990234, 10)
 
 [node name="CSGBox3D33" type="CSGBox3D" parent="Main" unique_id=2030765855]
 transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3.9247694e-09, 263.6139, -8.537155, 10.41748)
@@ -218,9 +218,9 @@ use_collision = true
 size = Vector3(15.099609, 2.9990234, 10)
 
 [node name="CSGBox3D36" type="CSGBox3D" parent="Main" unique_id=1258022324]
-transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3.9247694e-09, 234.27452, -8.537155, -4.7868176)
+transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3.9247694e-09, 234.27452, -8.537155, -7.2017384)
 use_collision = true
-size = Vector3(21.61206, 2.9990234, 10)
+size = Vector3(18.88562, 2.9990234, 10)
 
 [node name="CSGBox3D37" type="CSGBox3D" parent="Main" unique_id=1315463022]
 transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3.9247694e-09, 221.62851, -8.537155, 14.030083)
@@ -324,9 +324,9 @@ use_collision = true
 size = Vector3(26.542816, 2.9990234, 10)
 
 [node name="CSGBox3D57" type="CSGBox3D" parent="Main" unique_id=616195073]
-transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3.9247694e-09, 190.4097, -8.537155, -0.21128166)
+transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3.9247694e-09, 190.4097, -8.537155, 1.8205062)
 use_collision = true
-size = Vector3(27.062622, 2.9990234, 10)
+size = Vector3(24.768738, 2.9990234, 10)
 
 [node name="CSGBox3D58" type="CSGBox3D" parent="Main" unique_id=521913545]
 transform = Transform3D(1.7714823, 0, 0, 0, 2, 0, 0, 0, 0.08978826, 204.81387, -8.537155, -2.445135)
@@ -365,9 +365,9 @@ use_collision = true
 size = Vector3(33.489258, 2.9990234, 10)
 
 [node name="CSGBox3D67" type="CSGBox3D" parent="Main" unique_id=1023220296]
-transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3.9247694e-09, 328.75568, -8.537155, 9.45181)
+transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3.9247694e-09, 326.28534, -8.537155, 9.154716)
 use_collision = true
-size = Vector3(7.4486084, 2.9990234, 10)
+size = Vector3(16.873505, 2.9990234, 10)
 
 [node name="CSGBox3D68" type="CSGBox3D" parent="Main" unique_id=215546730]
 transform = Transform3D(1.7714823, 0, 0, 0, 2, 0, 0, 0, 0.08978826, 310.15424, -8.537155, 49.81536)
@@ -415,9 +415,9 @@ use_collision = true
 size = Vector3(13.194092, 2.9990234, 10)
 
 [node name="CSGBox3D83" type="CSGBox3D" parent="Main" unique_id=1427226455]
-transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3.9247694e-09, 349.3769, -8.537155, -30.78778)
+transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3.9247694e-09, 349.3769, -8.537155, -16.468552)
 use_collision = true
-size = Vector3(26.846924, 2.9990234, 10)
+size = Vector3(43.013306, 2.9990234, 10)
 
 [node name="CSGBox3D84" type="CSGBox3D" parent="Main" unique_id=1241808239]
 transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3.9247694e-09, 331.32605, -8.537155, -23.706608)
@@ -450,9 +450,9 @@ use_collision = true
 size = Vector3(17.481201, 2.9990234, 10)
 
 [node name="CSGBox3D82" type="CSGBox3D" parent="Main" unique_id=1012703026]
-transform = Transform3D(1.7714823, 0, 0, 0, 2, 0, 0, 0, 0.08978826, 342.20996, -8.537155, 32.51519)
+transform = Transform3D(1.7714823, 0, 0, 0, 2, 0, 0, 0, 0.08978826, 334.75848, -8.537155, 32.51519)
 use_collision = true
-size = Vector3(13.194092, 2.9990234, 10)
+size = Vector3(21.606812, 2.9990234, 10)
 
 [node name="CSGBox3D59" type="CSGBox3D" parent="Main" unique_id=1847872773]
 transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3.9247694e-09, 187.03787, -8.537155, -47.684647)
