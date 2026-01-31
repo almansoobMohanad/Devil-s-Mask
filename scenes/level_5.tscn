@@ -23,7 +23,7 @@ material_override = SubResource("StandardMaterial3D_e224s")
 mesh = SubResource("BoxMesh_wcwf6")
 
 [node name="Player" parent="." unique_id=1256405127 groups=["player"] instance=ExtResource("1_x4gu4")]
-transform = Transform3D(1.7655126, 0, 0, 0, 1, 0, 0, 0, 1, 665.7001, 6.2052364, -27.503836)
+transform = Transform3D(1.7655126, 0, 0, 0, 1, 0, 0, 0, 1, 6.792343, 5.150793, 3.3118382)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=809079093]
 transform = Transform3D(0.7173607, 0.40466598, -0.56713235, 0, 0.8140243, 0.5808308, 0.696702, -0.4166652, 0.583949, 0, 9.406256, 0)
