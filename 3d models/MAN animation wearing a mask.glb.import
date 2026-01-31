@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctga8x8mqs040"
-path="res://.godot/imported/MAN animation breathing.glb-1a102e70ac2d7b7c5f01cd1e1bbedff8.scn"
+uid="uid://ckcbpcw4gj8i5"
+path="res://.godot/imported/MAN animation wearing a mask.glb-916168014415065eaa71cecf1432ca9a.scn"
 
 [deps]
 
-source_file="res://3d models/gltf files/MAN animation breathing.glb"
-dest_files=["res://.godot/imported/MAN animation breathing.glb-1a102e70ac2d7b7c5f01cd1e1bbedff8.scn"]
+source_file="res://3d models/MAN animation wearing a mask.glb"
+dest_files=["res://.godot/imported/MAN animation wearing a mask.glb-916168014415065eaa71cecf1432ca9a.scn"]
 
 [params]
 
