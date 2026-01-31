@@ -2,8 +2,12 @@ extends CharacterBody3D
 
 
 const SPEED = 10.0
+<<<<<<< Updated upstream
 const JUMP_VELOCITY = 5
 const MASK_MULTIPLIER = 1
+=======
+const JUMP_VELOCITY = 40
+>>>>>>> Stashed changes
 var health : int = 5
 var damage : int = 1
 var maskLevel : int = 1
@@ -21,7 +25,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * 7
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -77,6 +81,7 @@ func game_over() -> void:
 	emit_signal("Game Over")
 
 	# Implement game over logic here (e.g., restart level, show game over screen, etc.)
+<<<<<<< Updated upstream
 	
 	
 func add_mask_fragment(id: int):
@@ -88,3 +93,5 @@ func add_mask_fragment(id: int):
 func update_player_power():
 	# Add your power-up logic here
 	pass
+=======
+>>>>>>> Stashed changes
