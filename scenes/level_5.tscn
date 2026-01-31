@@ -609,6 +609,10 @@ transform = Transform3D(-7.743395e-08, 0, 0.08978826, 0, 2, 0, -1.7714823, 0, -3
 use_collision = true
 size = Vector3(5.6187134, 2.9990234, 10)
 
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Main" unique_id=312378645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161.18167, 35.757915, -212.88904)
+radius = 5.722699
+
 [node name="Masked" type="Node3D" parent="." unique_id=2135461556]
 
 [node name="Unmasked" type="Node3D" parent="." unique_id=953955007]
