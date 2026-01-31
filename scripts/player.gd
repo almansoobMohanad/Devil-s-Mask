@@ -3,7 +3,14 @@ extends CharacterBody3D
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 5
+var health : int = 5
+var damage : int = 1
+var isMasked : bool = false
 
+@onready var maskTimer = $Timer
+
+func _ready() -> void:
+	maskTimer.timeout.connect(Callable(self, "maskWorn").bind(1))
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,3 +33,20 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func take_damage(amount: int) -> void:
+	health -= amount
+	if health <= 0:
+		game_over()
+
+func maskWorn(maskLevel: int) -> void:
+	isMasked = true
+	if maskLevel > 0:
+		maskTimer.start(maskLevel * 1)
+	else:
+		isMasked = false
+
+func game_over() -> void:
+	emit_signal("Game Over")
+
+	# Implement game over logic here (e.g., restart level, show game over screen, etc.)
