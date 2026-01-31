@@ -4,6 +4,7 @@ const SPEED = 10.0
 const JUMP_VELOCITY = 20
 const MASK_MULTIPLIER = 1
 const ATTACK_DISTANCE = 10 
+const FRAGMENT_TIME : float = 2.0  # Seconds per fragment
 
 var health : int = 5
 var damage : int = 1
@@ -15,6 +16,16 @@ var isArmed : bool = true
 var is_jumping : bool = false  # Track if we're jumping
 var is_transforming : bool = false  # Track if we're transforming
 
+# World transformation system
+var is_world_transformed : bool = false
+var transform_timer : float = 0.0
+var can_world_transform : bool = true
+
+# World references - Drag and drop in the inspector
+@export var main_world : Node3D
+@export var masked_world : Node3D
+@export var unmasked_world : Node3D
+
 @onready var maskTimer = $Timer
 @onready var anim_player = $Man/AnimationPlayer
 @onready var model = $Man  # Reference to the visual model
@@ -22,8 +33,22 @@ var is_transforming : bool = false  # Track if we're transforming
 func _ready() -> void:
 	# Connect to animation finished signal
 	anim_player.animation_finished.connect(_on_animation_finished)
+	
+	# Add to player group if not already
+	if not is_in_group("player"):
+		add_to_group("player")
+	
+	# Initialize worlds
+	update_world_visibility()
 
 func _physics_process(delta: float) -> void:
+	# Handle world transform timer
+	if is_world_transformed:
+		transform_timer -= delta
+		if transform_timer <= 0.0:
+			# Time's up, revert to unmasked world
+			revert_world_transform()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 5
@@ -37,10 +62,11 @@ func _physics_process(delta: float) -> void:
 		is_jumping = true  # Mark that we're jumping
 		#anim_player.play("Global/metarig_walking")  # Play jump animation immediately
 	
-	# Handle Transform (E key)
-	if Input.is_action_just_pressed("transform") and not is_transforming:
+	# Handle Transform (E key) - Now toggles world transformation
+	if Input.is_action_just_pressed("transform") and not is_transforming and can_world_transform:
 		is_transforming = true
-		anim_player.play("Global/metarigAction")
+		anim_player.play("Global/metarigAction", -1, 4)
+		toggle_world_transform()
 		
 	# Handle Mask Wear
 	if Input.is_action_just_pressed("mask_wear"):
@@ -140,15 +166,108 @@ func armPlayer() -> void:
 func game_over() -> void:
 	print("Game Over!")
 	emit_signal("Game Over")
-
 	# Implement game over logic here (e.g., restart level, show game over screen, etc.)
+
+# World Transformation Functions
+func toggle_world_transform() -> void:
+	if mask_fragments <= 0:
+		print("No mask fragments available! Cannot transform worlds.")
+		return
 	
+	if is_world_transformed:
+		# Player wants to cancel transformation early
+		revert_world_transform()
+	else:
+		# Transform to masked world
+		is_world_transformed = true
+		transform_timer = mask_fragments * FRAGMENT_TIME
+		update_world_visibility()
+		print("World transformed! Time remaining: ", transform_timer, " seconds")
+
+func revert_world_transform() -> void:
+	is_world_transformed = false
+	transform_timer = 0.0
+	update_world_visibility()
+	print("Reverted to normal world")
+
+func update_world_visibility() -> void:
+	if main_world:
+		main_world.visible = true  # Always visible
+		set_world_process_mode(main_world, true)
 	
+	if masked_world:
+		masked_world.visible = is_world_transformed
+		set_world_process_mode(masked_world, is_world_transformed)
+	
+	if unmasked_world:
+		unmasked_world.visible = not is_world_transformed
+		set_world_process_mode(unmasked_world, not is_world_transformed)
+
+func set_world_process_mode(world: Node3D, enabled: bool) -> void:
+	if not world:
+		return
+	
+	# Set the process mode to disable physics and processing when not visible
+	if enabled:
+		world.process_mode = Node.PROCESS_MODE_INHERIT
+	else:
+		world.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	# Recursively disable all collisions in the world
+	disable_collisions_recursive(world, not enabled)
+
+func disable_collisions_recursive(node: Node, disable: bool) -> void:
+	# Disable collision shapes FIRST - this is the key part
+	if node is CollisionShape3D or node is CollisionPolygon3D:
+		node.disabled = disable
+	
+	# Handle CSG objects (they have their own collision system)
+	if node is CSGShape3D:
+		if disable:
+			# Store original use_collision state
+			if not node.has_meta("original_use_collision"):
+				node.set_meta("original_use_collision", node.use_collision)
+			node.use_collision = false
+		else:
+			# Restore original use_collision state
+			if node.has_meta("original_use_collision"):
+				node.use_collision = node.get_meta("original_use_collision")
+	
+	# Disable Area3D and physics bodies
+	if node is Area3D or node is StaticBody3D or node is RigidBody3D or node is CharacterBody3D:
+		if disable:
+			# Store original collision layer/mask
+			if not node.has_meta("original_collision_layer"):
+				node.set_meta("original_collision_layer", node.collision_layer)
+				node.set_meta("original_collision_mask", node.collision_mask)
+			node.collision_layer = 0
+			node.collision_mask = 0
+		else:
+			# Restore original collision layer/mask
+			if node.has_meta("original_collision_layer"):
+				node.collision_layer = node.get_meta("original_collision_layer")
+				node.collision_mask = node.get_meta("original_collision_mask")
+		
+		# CRITICAL FIX: Also disable child collision shapes
+		for child in node.get_children():
+			if child is CollisionShape3D or child is CollisionPolygon3D:
+				child.disabled = disable
+	
+	# Recursively process all children
+	for child in node.get_children():
+		disable_collisions_recursive(child, disable)
+
 func add_mask_fragment(id: int):
 	mask_fragments += 1
 	collected_fragments_ids.append(id)
-	print("Fragment collected! Total: ", mask_fragments)
+	print("Fragment collected! Total: ", mask_fragments, " (", mask_fragments * FRAGMENT_TIME, " seconds available)")
 	update_player_power()
 
 func update_player_power():
 	pass
+
+func get_remaining_transform_time() -> float:
+	return transform_timer
+
+func get_fragment_count() -> int:
+	return mask_fragments
