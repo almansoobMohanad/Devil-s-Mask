@@ -3,14 +3,17 @@ extends CharacterBody3D
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 5
+const MASK_MULTIPLIER = 1
 var health : int = 5
 var damage : int = 1
+var maskLevel : int = 1
 var isMasked : bool = false
+var isArmed : bool = false
 
 @onready var maskTimer = $Timer
 
 func _ready() -> void:
-	maskTimer.timeout.connect(Callable(self, "maskWorn").bind(1))
+	maskTimer.timeout.connect(Callable(self, "maskWorn"))
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -21,9 +24,20 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
+	# Handle Mask Wear
+	if Input.is_action_just_pressed("mask_wear"):
+		maskWorn()
+
+	# Handle Attack
+	if Input.is_action_just_pressed("attack") and isArmed:
+		for enemy in get_parent().get_node("Enemies").get_children():
+			if global_transform.origin.distance_to(enemy.global_transform.origin) < 3.0:
+				enemy.take_damage(deal_damage())
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -39,13 +53,23 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		game_over()
 
-func maskWorn(maskLevel: int) -> void:
-	isMasked = true
-	if maskLevel > 0:
-		maskTimer.start(maskLevel * 1)
-	else:
-		isMasked = false
+func deal_damage() -> int:
+	return damage
 
+func maskWorn() -> void:
+	if isMasked:
+		isMasked = false
+		maskTimer.stop()
+	else:
+		isMasked = true
+		maskTimer.start(maskLevel * MASK_MULTIPLIER)
+
+func maskNextLevel() -> void:
+	maskLevel += 1
+
+func armPlayer() -> void:
+	isArmed = true
+	
 func game_over() -> void:
 	emit_signal("Game Over")
 
