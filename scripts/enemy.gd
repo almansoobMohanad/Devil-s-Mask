@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 const SPEED := 10.0
 const SIGHT_RANGE := 20.0
-const VIEW_ANGLE := 120.0
+const VIEW_ANGLE := 100.0
 @onready var ray = $VisionRayCast
 @onready var vision_area = $VisionArea
 
@@ -19,18 +19,25 @@ var scan_angle : float = 0.0
 var scanning : bool = true
 
 # Scanning limits in radians
-var scan_min : float = -2 
-var scan_max : float = 2
+var scan_min : float = -4 
+var scan_max : float = 4
 var scan_direction : int = 1 # 1 for right, -1 for left
 
 
 func _physics_process(delta: float) -> void:
 	# Update debug line
+	# Draw a triangle for the POV angle (centered on forward direction)
 	var mesh = ImmediateMesh.new()
 	mesh.clear_surfaces()
-	mesh.surface_begin(Mesh.PRIMITIVE_LINES)
+	mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES)
+	var radius = SIGHT_RANGE
+	var half_angle = deg_to_rad(VIEW_ANGLE / 2.0)
+	var forward = Vector3(0, 1, radius)
+	var left = Vector3(radius * sin(-half_angle), 0, radius * cos(-half_angle))
+	var right = Vector3(radius * sin(half_angle), 0, radius * cos(half_angle))
 	mesh.surface_add_vertex(Vector3.ZERO)
-	mesh.surface_add_vertex(ray.to_local(ray.to_global(ray.target_position)))
+	mesh.surface_add_vertex(left)
+	mesh.surface_add_vertex(right)
 	mesh.surface_end()
 	debug_line.mesh = mesh
 
