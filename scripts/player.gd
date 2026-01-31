@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 const SPEED = 10.0
-const JUMP_VELOCITY = 5
+const JUMP_VELOCITY = 40
 const MASK_MULTIPLIER = 1
 var health : int = 5
 var damage : int = 1
