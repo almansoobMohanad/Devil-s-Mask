@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED := 10.0
+const SPEED := 8.0
 const SIGHT_RANGE := 20.0
 const VIEW_ANGLE := 100.0
 @export var path_follow_path : NodePath
@@ -18,6 +18,10 @@ var attack_timer : float = 0.0
 var patrol_speed : float = SPEED / 2
 var path_direction : int = 1  # 1 for forward, -1 for backward
 var is_attacking : bool = false
+
+# Patrol parameters
+var is_chasing_player : bool = false
+var returning_to_path_speed : float = SPEED / 1.5
 
 # Scanning parameters
 var scan_speed : float = 1.0
@@ -57,6 +61,7 @@ func _physics_process(delta: float) -> void:
 	# Handle Line of Sight to Player
 	var player = get_player_in_sight()
 	if player and is_in_sight(player):
+		is_chasing_player = true
 		scanning = false
 		# Make the enemy face the player
 		var direction_to_player = (player.global_transform.origin - global_transform.origin).normalized()
@@ -65,36 +70,32 @@ func _physics_process(delta: float) -> void:
 		# Move towards player
 		velocity.x = direction_to_player.x * SPEED
 		velocity.z = direction_to_player.z * SPEED
-	elif not (player and is_in_sight(player)):
-		path_follow.progress += patrol_speed * delta
-		global_transform.origin = path_follow.global_transform.origin
-		look_at(path_follow.global_transform.origin + path_follow.transform.basis.z, Vector3.UP)
-	
+
 		# Play move animation if not attacking
 		if not is_attacking and anim_player.current_animation != "move":
 			anim_player.play("move")
+
 	else:
-		if not scanning:
-			# Reset scanning
-			scanning = true
-			scan_angle = rad_to_deg(ray.rotation.y)
-			
-		scan_angle += scan_speed * scan_direction * delta
-		if scan_angle > scan_max:
-			scan_angle = scan_max 
-			scan_direction *= -1
-		elif scan_angle < scan_min:
-			scan_angle = scan_min
-			scan_direction *= -1
-		ray.rotation.y = deg_to_rad(scan_angle)
+		# Normal patrol behavior - use velocity instead of teleporting
+		path_follow.progress += patrol_speed * delta * path_direction
 		
-		# Stop moving when not tracking player
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		# Get target position from path
+		var target_pos = path_follow.global_transform.origin
+		var direction_to_target = (target_pos - global_transform.origin)
+		direction_to_target.y = 0
+		direction_to_target = direction_to_target.normalized()
 		
-		# Stop move animation when idle
-		if anim_player.current_animation == "move":
-			anim_player.stop()
+		# Move with velocity toward the path position
+		velocity.x = direction_to_target.x * patrol_speed
+		velocity.z = direction_to_target.z * patrol_speed
+		
+		# Look in movement direction
+		if direction_to_target.length() > 0.01:
+			look_at(global_transform.origin + direction_to_target, Vector3.UP)
+
+		# Play move animation if not attacking
+		if not is_attacking and anim_player.current_animation != "move":
+			anim_player.play("move")
 	
 	attack_timer -= delta
 	move_and_slide()

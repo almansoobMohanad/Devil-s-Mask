@@ -121,6 +121,9 @@ func _physics_process(delta: float) -> void:
 	if not is_jumping and not is_transforming:
 		update_animation(direction)
 
+	if position.y < 0:
+		get_tree().change_scene_to_file("res://scenes/gameover.tscn")
+	
 func _on_animation_finished(anim_name: String):
 	# When transform animation finishes, allow other animations
 	if anim_name == "Global/metarigAction":
@@ -172,6 +175,10 @@ func maskNextLevel() -> void:
 
 func armPlayer() -> void:
 	isArmed = true
+
+func _process(delta):
+	if position.y < 0: # adjust threshold
+		game_over()  # call your game over function directly
 
 func game_over() -> void:
 	print("Game Over!")

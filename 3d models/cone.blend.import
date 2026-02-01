@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b3q5ewsvc7onp"
-valid=false
+path="res://.godot/imported/cone.blend-f658302d0fd1c5b57390bd26d226a2c2.scn"
 
 [deps]
 
 source_file="res://3d models/cone.blend"
+dest_files=["res://.godot/imported/cone.blend-f658302d0fd1c5b57390bd26d226a2c2.scn"]
 
 [params]
 

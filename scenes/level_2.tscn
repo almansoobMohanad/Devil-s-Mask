@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ddhp80jfrd3nd"]
+[gd_scene format=3 uid="uid://0kel41mk6wh8"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_3bmlt"]
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_b4j7a"]

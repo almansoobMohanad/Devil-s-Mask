@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ini4kx2i5p0h"]
+[gd_scene format=3 uid="uid://dytw3g8qvof7r"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_rus8k"]
