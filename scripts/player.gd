@@ -166,11 +166,16 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		game_over()
 
+func increase_health(amount: int) -> void:
+	health += amount
+	print("Player health increased to ", health)
+
 func attack(enemy: CharacterBody3D) -> void:
 	print("Checking enemy: ", enemy.name)
 	if global_transform.origin.distance_to(enemy.global_transform.origin) < ATTACK_DISTANCE:
 		print("Attacking enemy: ", enemy.name)
 		enemy.take_damage(deal_damage())
+		increase_health(deal_damage())  # Heal player on successful attack
 
 func deal_damage() -> int:
 	return damage

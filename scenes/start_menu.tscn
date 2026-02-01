@@ -1,7 +1,9 @@
-[gd_scene format=3 uid="uid://dnc4x8txd1kjk"]
+[gd_scene format=3 uid="uid://fan8mcyxqes3"]
 
 [ext_resource type="Script" uid="uid://dm0a76heh7q20" path="res://scenes/start_menu.gd" id="1_ouf4f"]
 [ext_resource type="AudioStream" uid="uid://mnwa07joc040" path="res://Assets/Sfx/game-start-6104.mp3" id="2_thu50"]
+[ext_resource type="AudioStream" uid="uid://dmd1mo8xf7gm1" path="res://Assets/Sfx/game-music-7408.mp3" id="3_m7x51"]
+[ext_resource type="Texture2D" uid="uid://dooew775mw6ni" path="res://Assets/GAME_SCREEN2.png" id="4_h61rw"]
 
 [node name="StartMenu" type="Control" unique_id=11880770]
 layout_mode = 3
@@ -30,18 +32,22 @@ grow_vertical = 2
 layout_mode = 2
 text = "Start"
 
-[node name="Options" type="Button" parent="VBoxContainer" unique_id=507692390]
-layout_mode = 2
-text = "Options"
-
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=1880704572]
 layout_mode = 2
 text = "Quit"
 
-[node name="click" type="AudioStreamPlayer" parent="." unique_id=1440236862]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=215972667]
+stream = ExtResource("3_m7x51")
+volume_db = -0.6
+autoplay = true
+
+[node name="click" type="AudioStreamPlayer" parent="." unique_id=2015386223]
 stream = ExtResource("2_thu50")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=542336618]
+[node name="GameScreen2" type="Sprite2D" parent="." unique_id=14856424]
+z_index = -1
+position = Vector2(869, 503)
+texture = ExtResource("4_h61rw")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

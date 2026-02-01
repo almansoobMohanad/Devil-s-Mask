@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://e0yfgpqhhf3r"]
+[gd_scene format=3 uid="uid://d3m42pg7s6bsg"]
 
-[ext_resource type="Texture2D" uid="uid://c32ofulqdt1wv" path="res://Assets/squid-game-frontman-3840x2160-20903.png" id="1_ncp31"]
-[ext_resource type="Script" uid="uid://bc44qoie2lyh1" path="res://scenes/Gameover_Restart.gd" id="2_dy3ie"]
-[ext_resource type="AudioStream" uid="uid://ddd5ptmapf5xu" path="res://Assets/Sfx/15sec-2021-08-16_-_8_Bit_Adventure_-_www.FesliyanStudios.com.mp3" id="3_2mkfd"]
-[ext_resource type="AudioStream" uid="uid://mnwa07joc040" path="res://Assets/Sfx/game-start-6104.mp3" id="4_h8i2o"]
+[ext_resource type="AudioStream" uid="uid://ddd5ptmapf5xu" path="res://Assets/Sfx/15sec-2021-08-16_-_8_Bit_Adventure_-_www.FesliyanStudios.com.mp3" id="1_m504p"]
+[ext_resource type="AudioStream" uid="uid://mnwa07joc040" path="res://Assets/Sfx/game-start-6104.mp3" id="2_n8g1v"]
+[ext_resource type="Script" uid="uid://bc44qoie2lyh1" path="res://scenes/Gameover_Restart.gd" id="3_q7jsg"]
+[ext_resource type="Texture2D" uid="uid://c32ofulqdt1wv" path="res://Assets/squid-game-frontman-3840x2160-20903.png" id="4_tr3gj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
-font_size = 108
+font_size = 66
 
 [sub_resource type="LabelSettings" id="LabelSettings_ncp31"]
 font_size = 52
@@ -32,24 +32,24 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1492086785]
 layout_mode = 2
-text = "GAME OVER"
+text = "CONGRATULATIONS"
 label_settings = SubResource("LabelSettings_dy3ie")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer" unique_id=196660209]
 layout_mode = 2
-text = "Good Game!"
+text = "Run completed!"
 label_settings = SubResource("LabelSettings_ncp31")
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=736577261]
-stream = ExtResource("3_2mkfd")
+stream = ExtResource("1_m504p")
 volume_db = -7.0
 autoplay = true
 
 [node name="click" type="AudioStreamPlayer" parent="." unique_id=1392849756]
-stream = ExtResource("4_h8i2o")
+stream = ExtResource("2_n8g1v")
 volume_db = 5.0
 
 [node name="Button" type="Button" parent="." unique_id=799663277]
@@ -59,11 +59,11 @@ offset_top = 449.0
 offset_right = 656.0
 offset_bottom = 480.0
 text = "RESTART"
-script = ExtResource("2_dy3ie")
+script = ExtResource("3_q7jsg")
 
 [node name="SquidGameFrontman3840x216020903" type="Sprite2D" parent="." unique_id=16867823]
 position = Vector2(922.00006, 259)
 scale = Vector2(0.51, 0.51)
-texture = ExtResource("1_ncp31")
+texture = ExtResource("4_tr3gj")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

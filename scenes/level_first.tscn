@@ -2,30 +2,36 @@
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_rus8k"]
-[ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="3_5xbjy"]
+[ext_resource type="Texture2D" uid="uid://xi45j7eeur4q" path="res://3d models/tree_rock_wall_16_diff_4k.jpg" id="2_yhxwk"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_15mv3"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_e3sih"]
-[ext_resource type="AudioStream" uid="uid://bjs7mgm5p4r58" path="res://Assets/Sfx/game-background-1-321720.mp3" id="6_imvab"]
+[ext_resource type="Texture2D" uid="uid://do6opc0j6mbad" path="res://3d models/mask png/Emit.png" id="6_3mg3q"]
+[ext_resource type="PackedScene" path="res://scenes/torch.tscn" id="6_imvab"]
+[ext_resource type="AudioStream" uid="uid://b8hcxxvi5hfje" path="res://Assets/Sfx/best-game-console-301284.mp3" id="7_3mg3q"]
+[ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="8_xyhiu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nkto"]
-albedo_texture = ExtResource("2_rus8k")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fcfvj"]
-albedo_texture = ExtResource("3_5xbjy")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15mv3"]
-albedo_texture = ExtResource("2_rus8k")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3sih"]
-albedo_texture = ExtResource("3_5xbjy")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2y5yt"]
-albedo_texture = ExtResource("3_5xbjy")
+albedo_texture = ExtResource("2_yhxwk")
+uv1_scale = Vector3(1.73, 1.73, 1.73)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa8r4"]
 albedo_texture = ExtResource("2_rus8k")
 
-[node name="Node3D" type="Node3D" unique_id=1341943185]
+[sub_resource type="Environment" id="Environment_imvab"]
+background_mode = 1
+background_energy_multiplier = 0.0
+ambient_light_energy = 0.0
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kbqg4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1jf33"]
+albedo_texture = ExtResource("6_3mg3q")
+uv1_scale = Vector3(2.375, 2.375, 2.375)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bxrd5"]
+size = Vector2(300, 300)
+
+[node name="Node3D3" type="Node3D" unique_id=1341943185]
 
 [node name="Player" parent="." unique_id=1256405127 instance=ExtResource("1_014kd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
@@ -41,7 +47,7 @@ sides = 6
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Main/CSGCylinder3D" unique_id=2016294449]
 transform = Transform3D(1.0000007, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.354424, -3.2883844, 0.035898447)
-material_override = SubResource("StandardMaterial3D_fcfvj")
+material_override = SubResource("StandardMaterial3D_4nkto")
 use_collision = true
 radius = 0.6
 height = 16.435938
@@ -102,31 +108,39 @@ height = 20.076954
 
 [node name="Mask Shrine" type="CSGBox3D" parent="Main" unique_id=1652733258]
 transform = Transform3D(4.199987, 0, -1.668935e-07, 0, 0.9999205, 0, 2.670287e-06, 0, 4.199998, 10, 20, -125)
-material_override = SubResource("StandardMaterial3D_15mv3")
+material_override = SubResource("StandardMaterial3D_4nkto")
 use_collision = true
 size = Vector3(2, 4.6, 2.4)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Main/Mask Shrine" unique_id=1932429237]
 transform = Transform3D(1.7433295, 0, -0.019230163, 0, 1.600127, 0, 1.2345026e-07, 0, 0.9118299, 0.017999649, 5.000202, 0.9324188)
+material_override = SubResource("StandardMaterial3D_4nkto")
 use_collision = true
 size = Vector3(1.6, 7.8, 0.3)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Main/Mask Shrine/CSGBox3D6" unique_id=1755018292]
 transform = Transform3D(0.6760135, 0.6760135, 0.0020162268, -4.4194174, 4.4194174, 0, -8.837956e-07, -8.837956e-07, 0.18278271, -0.011289597, -1.4373798, -0.03293991)
+material_override = SubResource("StandardMaterial3D_4nkto")
 operation = 2
 size = Vector3(1, 1, 2.7)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Main/Mask Shrine" unique_id=1262700655]
 transform = Transform3D(3.1728587, 0, -0.019230148, 0, 3.1202476, 0, 2.2467998e-07, 0, 0.91182894, 0.017998695, 9.000519, 0.46575165)
-material_override = SubResource("StandardMaterial3D_e3sih")
+material_override = SubResource("StandardMaterial3D_4nkto")
 use_collision = true
 size = Vector3(1.6, 7.8, 0.3)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Main/Mask Shrine/CSGBox3D7" unique_id=1157121066]
 transform = Transform3D(0.6760135, 0.6760135, 0.0020162268, -4.4194174, 4.4194174, 0, -8.837956e-07, -8.837956e-07, 0.18278271, -0.011289597, -1.4373798, -0.03293991)
-material_override = SubResource("StandardMaterial3D_2y5yt")
+material_override = SubResource("StandardMaterial3D_4nkto")
 operation = 2
 size = Vector3(1, 1, 2.7)
+
+[node name="Torch9" parent="Main/Mask Shrine" unique_id=933643341 instance=ExtResource("6_imvab")]
+transform = Transform3D(-0.010680334, 0, -0.23785631, 0, 1.0000795, 0, 0.23785569, 0, -0.010680164, 0.85032773, 6.812153, 1.2125816)
+
+[node name="Torch10" parent="Main/Mask Shrine" unique_id=1504117606 instance=ExtResource("6_imvab")]
+transform = Transform3D(-0.010680334, 0, -0.23785631, 0, 1.0000795, 0, 0.23785569, 0, -0.010680164, -0.75049376, 6.812153, 1.2125816)
 
 [node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Main" unique_id=1754863754]
 transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 10, 10, -0.09804797, -107)
@@ -158,6 +172,70 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, -38)
 [node name="MaskFragment2" parent="." unique_id=1645361728 instance=ExtResource("5_e3sih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 23, -125)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=773674098]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=790046781]
+environment = SubResource("Environment_imvab")
+
+[node name="Torch" parent="." unique_id=948839827 instance=ExtResource("6_imvab")]
+transform = Transform3D(-0.98992014, 0, 0.14162683, 0, 1, 0, -0.14162683, 0, -0.98992014, 6.4019213, 13.291241, 0.9792862)
+
+[node name="Torch2" parent="." unique_id=1180140243 instance=ExtResource("6_imvab")]
+transform = Transform3D(-0.98992014, 0, 0.14162683, 0, 1, 0, -0.14162683, 0, -0.98992014, 4.6229434, 13.167798, -16.240116)
+
+[node name="Torch3" parent="." unique_id=1949227886 instance=ExtResource("6_imvab")]
+transform = Transform3D(-0.98992014, 0, 0.14162683, 0, 1, 0, -0.14162683, 0, -0.98992014, 9.975459, 13.470628, -37.907063)
+
+[node name="Torch4" parent="." unique_id=988726093 instance=ExtResource("6_imvab")]
+transform = Transform3D(0.9899201, 0, -0.14162691, 0, 1, 0, 0.14162691, 0, 0.9899201, -5.3982186, 13.2063, -54.99263)
+
+[node name="Torch5" parent="." unique_id=1800346855 instance=ExtResource("6_imvab")]
+transform = Transform3D(0.032422632, 0, -0.99947417, 0, 1, 0, 0.99947417, 0, 0.032422632, -5.1459613, 14.172366, -72.44445)
+
+[node name="Torch7" parent="." unique_id=1661723935 instance=ExtResource("6_imvab")]
+transform = Transform3D(0.7617532, 0, -0.64786714, 0, 1, 0, 0.64786714, 0, 0.7617532, 7.821184, 17.804846, -84.000786)
+
+[node name="Torch8" parent="." unique_id=1152154791 instance=ExtResource("6_imvab")]
+transform = Transform3D(0.8648097, 0, 0.50209963, 0, 1, 0, -0.50209963, 0, 0.8648097, 8.369398, 22.219358, -92.93328)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2006789302]
-stream = ExtResource("6_imvab")
+stream = ExtResource("7_3mg3q")
+volume_db = -5.0
 autoplay = true
+
+[node name="Lava" type="StaticBody3D" parent="." unique_id=1248925224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.748808, -67.572235)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lava" unique_id=1721129888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.62075, 0)
+shape = SubResource("WorldBoundaryShape3D_kbqg4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lava" unique_id=66192816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.997879, -11.209351, 0.029907227)
+material_override = SubResource("StandardMaterial3D_1jf33")
+mesh = SubResource("PlaneMesh_bxrd5")
+
+[node name="MaskFragment3" parent="Lava/MeshInstance3D" unique_id=2058853540 instance=ExtResource("8_xyhiu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.533027, 52.170326, -44.052834)
+fragment_id = 3
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lava" unique_id=38025010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.464554, 2.502121, 0)
+light_color = Color(0.8001832, 0.41909766, 0, 1)
+light_energy = 15.229
+light_indirect_energy = 4.344
+omni_range = 157.9273
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lava" unique_id=263420331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.464554, 2.502121, 94.06616)
+light_color = Color(0.8001832, 0.41909766, 0, 1)
+light_energy = 15.229
+light_indirect_energy = 4.344
+omni_range = 157.9273
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lava" unique_id=722483960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.464554, 2.502121, -78.8566)
+light_color = Color(0.8001832, 0.41909766, 0, 1)
+light_energy = 15.229
+light_indirect_energy = 4.344
+omni_range = 157.9273

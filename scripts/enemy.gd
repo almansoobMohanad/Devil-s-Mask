@@ -135,11 +135,13 @@ func is_in_sight(player: CharacterBody3D) -> bool:
 	ray.force_raycast_update()
 	return ray.is_colliding() and ray.get_collider() == player
 
-func take_damage(amount: int) -> void:
+func take_damage(amount: int) -> int:
 	print("Enemy took ", amount, " damage!")
 	health -= amount
 	if health <= 0:
 		die()
+
+	return amount
 
 func deal_damage() -> int:
 	return damage
