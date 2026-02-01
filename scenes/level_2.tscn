@@ -66,7 +66,7 @@ albedo_texture = ExtResource("2_b4j7a")
 
 [sub_resource type="Curve3D" id="Curve3D_6cvei"]
 
-[node name="Node3D" type="Node3D" unique_id=945736449]
+[node name="Node3D2" type="Node3D" unique_id=945736449]
 
 [node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") groups=["player"] instance=ExtResource("1_3bmlt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 10.5, -0.1)
@@ -265,6 +265,8 @@ fragment_id = 5
 
 [node name="MaskFragment" parent="." unique_id=1572411642 instance=ExtResource("5_ne2mo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 21.2, -25.9)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1329903331]
 
 [node name="Path3D" type="Path3D" parent="." unique_id=456700214]
 curve = SubResource("Curve3D_6cvei")
