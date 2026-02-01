@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="GameJam"
-run/main_scene="uid://dnc4x8txd1kjk"
+run/main_scene="uid://bnc4ha02utut0"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
