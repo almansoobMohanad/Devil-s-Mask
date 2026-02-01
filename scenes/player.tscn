@@ -1280,3 +1280,5 @@ light_indirect_energy = 2.662
 light_volumetric_fog_energy = 3.563
 light_size = 0.147
 light_specular = 0.223
+
+[node name="Timer" type="Timer" parent="." unique_id=561761991]

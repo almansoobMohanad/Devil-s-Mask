@@ -9,10 +9,9 @@ const FRAGMENT_TIME : float = 2.0  # Seconds per fragment
 var health : int = 5
 var damage : int = 1
 var maskLevel : int = 1
-var isMasked : bool = false
 var mask_fragments: int = 0
 var collected_fragments_ids: Array = []
-var isArmed : bool = true
+var isArmed : bool = true # change to false if you want unarmed player at start
 var is_jumping : bool = false  # Track if we're jumping
 var is_transforming : bool = false  # Track if we're transforming
 
@@ -26,7 +25,6 @@ var can_world_transform : bool = true
 @export var masked_world : Node3D
 @export var unmasked_world : Node3D
 
-@onready var maskTimer = $Timer
 @onready var anim_player = $Man/AnimationPlayer
 @onready var model = $Man  # Reference to the visual model
 @onready var mask_node = $Man/mask  # Reference to the mask container
@@ -71,10 +69,6 @@ func _physics_process(delta: float) -> void:
 		is_transforming = true
 		anim_player.play("Global/metarigAction", -1, 4)
 		toggle_world_transform()
-		
-	# Handle Mask Wear
-	if Input.is_action_just_pressed("mask_wear"):
-		maskWorn()
 		
 	# Handle Attack (if armed)
 	if Input.is_action_just_pressed("attack") and isArmed:
@@ -153,14 +147,6 @@ func attack(enemy: CharacterBody3D) -> void:
 
 func deal_damage() -> int:
 	return damage
-
-func maskWorn() -> void:
-	if isMasked:
-		isMasked = false
-		maskTimer.stop()
-	else:
-		isMasked = true
-		maskTimer.start(maskLevel * MASK_MULTIPLIER)
 
 func maskNextLevel() -> void:
 	maskLevel += 1

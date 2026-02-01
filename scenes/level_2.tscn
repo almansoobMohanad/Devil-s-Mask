@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cxchorv6gtp0v"]
+[gd_scene format=3 uid="uid://ddhp80jfrd3nd"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_3bmlt"]
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_b4j7a"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_6cvei"]
 [ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="7_que50"]
-[ext_resource type="PackedScene" uid="uid://vo7vcx1g8mpl" path="res://scenes/mask_fragment5.tscn" id="8_hey2k"]
+[ext_resource type="PackedScene" path="res://scenes/mask_fragment.tscn" id="8_hey2k"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_eqxsl"]
 panorama = ExtResource("2_pbc48")
@@ -65,7 +65,7 @@ albedo_texture = ExtResource("2_b4j7a")
 [node name="Node3D" type="Node3D" unique_id=945736449]
 
 [node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") groups=["player"] instance=ExtResource("1_3bmlt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5, -0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 10.5, -0.1)
 main_world = NodePath("../Main")
 masked_world = NodePath("../Masked")
 unmasked_world = NodePath("../Unmasked")
@@ -82,7 +82,7 @@ environment = SubResource("Environment_wo48x")
 [node name="Main" type="Node3D" parent="." unique_id=1603335212]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Main" unique_id=1800634460]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.6, 4.5, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17, 4.5, 0)
 material_override = SubResource("StandardMaterial3D_uwxec")
 use_collision = true
 size = Vector3(8, 9, 28.800001)
@@ -172,13 +172,13 @@ size = Vector3(1, 1, 2.7)
 [node name="Unmasked" type="Node3D" parent="." unique_id=289688921]
 
 [node name="Rubble" type="CSGBox3D" parent="Unmasked" unique_id=643265307]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.5, 13.2, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16.9, 13.2, 0)
 material_override = SubResource("StandardMaterial3D_ax3dk")
 use_collision = true
 size = Vector3(8, 8.400001, 8)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Unmasked" unique_id=2116280817]
-transform = Transform3D(-12.1706705, 0, 2.9505384, 0, 2, 0, -3.261124, 0, -11.011555, 40.301754, 9.32547, -25.952732)
+transform = Transform3D(-12.1706705, 0, 2.9505384, 0, 2, 0, -3.261124, 0, -11.011555, 40.301754, 5.82547, -25.952732)
 material_override = SubResource("StandardMaterial3D_q2dsb")
 use_collision = true
 height = 18.153906
@@ -198,7 +198,7 @@ transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 16.700146, 9.
 [node name="Masked" type="Node3D" parent="." unique_id=365929474]
 
 [node name="Bridge" type="CSGBox3D" parent="Masked" unique_id=463335727]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 4.5, 6.906399e-07)
+transform = Transform3D(-4.371139e-08, 0, -0.7, 0, 1, 0, 1, 0, -3.059797e-08, 39.600002, 4.5, 6.906399e-07)
 material_override = SubResource("StandardMaterial3D_5xqnf")
 use_collision = true
 size = Vector3(8, 9, 24)
@@ -247,3 +247,6 @@ fragment_id = 4
 [node name="MaskFragment5" parent="." unique_id=1709027928 instance=ExtResource("8_hey2k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.628417, 10.050668, 2.7633743)
 fragment_id = 5
+
+[node name="MaskFragment" parent="." unique_id=1572411642 instance=ExtResource("5_ne2mo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 21.2, -25.9)
