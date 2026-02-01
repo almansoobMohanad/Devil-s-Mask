@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="3_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_15mv3"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_e3sih"]
+[ext_resource type="AudioStream" uid="uid://bjs7mgm5p4r58" path="res://Assets/Sfx/game-background-1-321720.mp3" id="6_imvab"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nkto"]
 albedo_texture = ExtResource("2_rus8k")
@@ -156,3 +157,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, -38)
 
 [node name="MaskFragment2" parent="." unique_id=1645361728 instance=ExtResource("5_e3sih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 23, -125)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2006789302]
+stream = ExtResource("6_imvab")
+autoplay = true
