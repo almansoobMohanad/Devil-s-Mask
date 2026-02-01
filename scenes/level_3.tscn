@@ -130,32 +130,36 @@ background_mode = 1
 ambient_light_energy = 0.0
 
 [sub_resource type="Curve3D" id="Curve3D_vcx5n"]
+closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 7.8996744, -3.6392326, -2.25951),
-"tilts": PackedFloat32Array(0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 9.045316, -3.6392326, 2.8188782, 0, 0, 0, 0, 0, 0, -9.145908, -4.1810455, -10.777813, 0, 0, 0, 0, 0, 0, -7.228676, -1.8685608, -1.1413784, 0, 0, 0, 0, 0, 0, 10.9340315, -4.109627, -9.511709),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 1
+point_count = 4
 
 [sub_resource type="Curve3D" id="Curve3D_56dhn"]
+closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 8.122959, -4.0161934, -9.171879),
-"tilts": PackedFloat32Array(0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 8.506708, -4.0161934, -9.171879, 0, 0, 0, 0, 0, 0, -7.865243, -2.8392296, 1.1405258),
+"tilts": PackedFloat32Array(0, 0)
 }
-point_count = 1
+point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_ax3dk"]
+closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.1435313, -4.147873, -5.845064),
-"tilts": PackedFloat32Array(0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.1435313, -4.147873, -5.845064, 0, 0, 0, 0, 0, 0, 6.397502, -3.6516075, 3.4527779),
+"tilts": PackedFloat32Array(0, 0)
 }
-point_count = 1
+point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_q2dsb"]
+closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -8.584267, -3.9883575, -8.516836),
-"tilts": PackedFloat32Array(0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -8.584267, -3.9883575, -8.516836, 0, 0, 0, 0, 0, 0, 6.940624, -3.453888, -8.442987),
+"tilts": PackedFloat32Array(0, 0)
 }
-point_count = 1
+point_count = 2
 
 [node name="Node3D" type="Node3D" unique_id=263277631]
 
@@ -779,6 +783,24 @@ radius = 4.4
 height = 42.359375
 sides = 6
 
+[node name="Enemies" type="Node3D" parent="Unmasked" unique_id=386242765]
+
+[node name="Enemy" parent="Unmasked/Enemies" unique_id=1293850703 instance=ExtResource("7_vcx5n")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9408665, 47.30255, -18.5566)
+path_follow_path = NodePath("../../../Path3D/PathFollow3D")
+
+[node name="Enemy2" parent="Unmasked/Enemies" unique_id=1155445807 instance=ExtResource("7_vcx5n")]
+transform = Transform3D(-0.32731688, 0, 0.94491464, 0, 1, 0, -0.94491464, 0, -0.32731688, 9.051088, 47, -24.714928)
+path_follow_path = NodePath("../../../Path3D2/PathFollow3D2")
+
+[node name="Enemy3" parent="Unmasked/Enemies" unique_id=1652184074 instance=ExtResource("7_vcx5n")]
+transform = Transform3D(-0.6009783, 0, -0.79926527, 0, 1, 0, 0.79926527, 0, -0.6009783, -7.0474977, 47, -21.348705)
+path_follow_path = NodePath("../../../Path3D3/PathFollow3D3")
+
+[node name="Enemy4" parent="Unmasked/Enemies" unique_id=2066679553 instance=ExtResource("7_vcx5n")]
+transform = Transform3D(-0.6009783, 0, -0.79926527, 0, 1, 0, 0.79926527, 0, -0.6009783, -8.80428, 47, -23.95776)
+path_follow_path = NodePath("../../../Path3D4/PathFollow3D4")
+
 [node name="Masked" type="Node3D" parent="." unique_id=1882722569]
 
 [node name="Moving Platform6" type="CSGBox3D" parent="Masked" unique_id=1786032030]
@@ -898,43 +920,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.063744, -15.746988)
 curve = SubResource("Curve3D_vcx5n")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=258634117]
-transform = Transform3D(0.8198666, 0.24944624, -0.5153594, 7.4505815e-09, 0.9001053, 0.43567243, 0.5725546, -0.35719326, 0.73796624, 7.283649, -4.0389214, -3.3149605)
+transform = Transform3D(0.5986824, -0.01910349, 0.8007583, 0, 0.99971193, 0.02385003, -0.80098635, -0.014278548, 0.59851193, 9.045316, -3.6392326, 2.8188782)
 
 [node name="Path3D2" type="Path3D" parent="." unique_id=1284234858]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.063744, -15.746988)
 curve = SubResource("Curve3D_56dhn")
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path3D2" unique_id=219330858]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 44.537537, -23.315725)
+transform = Transform3D(-0.5329664, 0.051373743, 0.8445753, 0, 0.9981545, -0.060715698, -0.84613645, -0.03235941, -0.5319831, 8.506708, -4.0161934, -9.171879)
 
 [node name="Path3D3" type="Path3D" parent="." unique_id=839100524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.063744, -15.746988)
 curve = SubResource("Curve3D_ax3dk")
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path3D3" unique_id=1372779081]
-transform = Transform3D(0.8198666, 0.24944624, -0.5153594, 7.4505815e-09, 0.9001053, 0.43567243, 0.5725546, -0.35719326, 0.73796624, 7.283649, -4.0389214, -3.3149605)
+transform = Transform3D(-0.56604797, -0.02489488, -0.8239946, -1.8626435e-09, 0.99954253, -0.030198585, 0.8243713, -0.017093865, -0.56578934, -7.1435313, -4.147873, -5.845064)
 
 [node name="Path3D4" type="Path3D" parent="." unique_id=557980618]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.063744, -15.746988)
 curve = SubResource("Curve3D_q2dsb")
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path3D4" unique_id=164583392]
-transform = Transform3D(0.8198666, 0.24944624, -0.5153594, 7.4505815e-09, 0.9001053, 0.43567243, 0.5725546, -0.35719326, 0.73796624, 7.283649, -4.0389214, -3.3149605)
-
-[node name="Enemies" type="Node3D" parent="." unique_id=386242765]
-
-[node name="Enemy" parent="Enemies" unique_id=1293850703 instance=ExtResource("7_vcx5n")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9408665, 47.30255, -18.5566)
-path_follow_path = NodePath("../../Path3D/PathFollow3D")
-
-[node name="Enemy2" parent="Enemies" unique_id=1155445807 instance=ExtResource("7_vcx5n")]
-transform = Transform3D(-0.32731688, 0, 0.94491464, 0, 1, 0, -0.94491464, 0, -0.32731688, 9.051088, 47, -24.714928)
-path_follow_path = NodePath("../../Path3D2/PathFollow3D2")
-
-[node name="Enemy3" parent="Enemies" unique_id=1652184074 instance=ExtResource("7_vcx5n")]
-transform = Transform3D(-0.6009783, 0, -0.79926527, 0, 1, 0, 0.79926527, 0, -0.6009783, -7.0474977, 47, -21.348705)
-path_follow_path = NodePath("../../Path3D3/PathFollow3D3")
-
-[node name="Enemy4" parent="Enemies" unique_id=2066679553 instance=ExtResource("7_vcx5n")]
-transform = Transform3D(-0.6009783, 0, -0.79926527, 0, 1, 0, 0.79926527, 0, -0.6009783, -8.80428, 47, -23.95776)
-path_follow_path = NodePath("../../Path3D4/PathFollow3D4")
+transform = Transform3D(-0.004756833, -0.034405436, -0.9993948, -1.862645e-09, 0.99940693, -0.034405798, 0.9999885, -0.00016366094, -0.0047540087, -8.584267, -3.9883575, -8.516836)
