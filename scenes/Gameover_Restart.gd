@@ -12,3 +12,6 @@ func _process(delta: float) -> void:
 
 func _pressed():
 	get_tree().change_scene_to_file("res://scenes/level_first.tscn")
+
+func _on_pressed() -> void:
+	$"../click".play()
