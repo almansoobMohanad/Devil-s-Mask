@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="8_0xifx"]
 [ext_resource type="PackedScene" uid="uid://vo7vcx1g8mpl" path="res://scenes/mask_fragment5.tscn" id="9_e2i88"]
 [ext_resource type="PackedScene" uid="uid://c7onnyw72ot4a" path="res://scenes/enemy.tscn" id="11_tuwuf"]
+[ext_resource type="AudioStream" uid="uid://cvely8j1f8h80" path="res://Assets/Sfx/416-8-bit-chiptune-instrumental-for-games-339237.mp3" id="10_iu4sr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mgce"]
 albedo_texture = ExtResource("2_bxape")
@@ -400,3 +401,7 @@ transform = Transform3D(-0.04588607, 0, -0.9989468, 0, 1, 0, 0.9989468, 0, -0.04
 
 [node name="Torch6" parent="." unique_id=920401443 instance=ExtResource("6_0xifx")]
 transform = Transform3D(0.6739156, 0, -0.7388084, 0, 1, 0, 0.7388084, 0, 0.6739156, -9.063707, 7.629774, -139.92947)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=860249625]
+stream = ExtResource("10_iu4sr")
+autoplay = true
