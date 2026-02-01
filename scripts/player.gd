@@ -10,6 +10,7 @@ const MASK_COOLDOWN_TIME : float = 1.0  # Cooldown time after transforming
 var health : int = 5
 var damage : int = 1
 var maskLevel : int = 1
+@export var starting_fragments: int = 0  # Set fragments in Inspector per level
 var mask_fragments: int = 0
 var collected_fragments_ids: Array = []
 var isArmed : bool = true # change to false if you want unarmed player at start
@@ -45,8 +46,13 @@ func _ready() -> void:
 	if not is_in_group("player"):
 		add_to_group("player")
 	
-	# Initialize mask visibility
-	update_mask_visibility()
+	# Set starting fragments for this level
+	mask_fragments = starting_fragments
+	print("Starting with ", mask_fragments, " fragments")
+	
+	# Show initial masks if we have starting fragments
+	if mask_fragments > 0:
+		update_mask_visibility()
 	
 	# Initialize worlds
 	update_world_visibility()
@@ -297,7 +303,10 @@ func update_player_power():
 
 func update_mask_visibility():
 	if not mask_node:
+		print("ERROR: mask_node is null")
 		return
+	
+	print("update_mask_visibility called - Fragments: ", mask_fragments, " Transformed: ", is_world_transformed, " Transforming: ", is_transforming)
 	
 	# Hide all masks first
 	for i in range(1, 6):
@@ -307,13 +316,15 @@ func update_mask_visibility():
 	
 	# Only show masks while transformed and after the transform animation ends
 	if not is_world_transformed or is_transforming:
+		print("Not showing masks - not transformed or still transforming")
 		return
 
-	# Show masks based on fragment count (1 fragment = mask_1, 2 = mask_2, etc.)
+	# Show the appropriate masks
 	for i in range(1, min(mask_fragments + 1, 6)):
 		var mask_piece = mask_node.get_node_or_null("mask_" + str(i))
 		if mask_piece and mask_piece is MeshInstance3D:
 			mask_piece.visible = true
+			print("Showing mask_", i)
 
 func get_remaining_transform_time() -> float:
 	return transform_timer

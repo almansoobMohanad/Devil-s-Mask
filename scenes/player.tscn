@@ -889,6 +889,7 @@ shadow_mesh = SubResource("ArrayMesh_w7s2l")
 
 [node name="Player" type="CharacterBody3D" unique_id=1256405127]
 script = ExtResource("1_3vyb7")
+starting_fragments = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2016101820]
 shape = SubResource("CapsuleShape3D_hn12h")
@@ -1177,6 +1178,7 @@ transform = Transform3D(-7.285231e-08, 0, 1.6666665, 0, 1.6666665, 0, -1.6666665
 
 [node name="mask_5" type="MeshInstance3D" parent="Man/mask" unique_id=451349725]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.38, 1.266, -1.186)
+visible = false
 mesh = SubResource("ArrayMesh_02jyd")
 skeleton = NodePath("")
 

@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_70nk6"]
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_h23n6"]
 [ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_uwxec"]
-[ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="3_1pn4d"]
 [ext_resource type="Script" uid="uid://dqd0gjvix38pf" path="res://scenes/moving_platform.gd" id="3_p6vls"]
 [ext_resource type="AudioStream" uid="uid://cw7gbhdxd07ac" path="res://Assets/Sfx/356-8-bit-chiptune-game-music-357518.mp3" id="4_1pn4d"]
 [ext_resource type="Texture2D" uid="uid://ne1a1ifvdjxt" path="res://3d models/gltf files/textures floor_rock_wall_16_diff_4k.jpg" id="4_hhfj6"]
@@ -11,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="7_56dhn"]
 [ext_resource type="PackedScene" uid="uid://b0nl8aq5rpmsb" path="res://scenes/enemy.tscn" id="7_vcx5n"]
 [ext_resource type="PackedScene" uid="uid://duqe10xkq7uqg" path="res://scenes/torch.tscn" id="8_wae8j"]
+[ext_resource type="PackedScene" uid="uid://c6785512vorto" path="res://scenes/Door.tscn" id="11_56dhn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pn4d"]
 albedo_texture = ExtResource("2_uwxec")
@@ -166,6 +166,7 @@ point_count = 2
 
 [node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") groups=["player"] instance=ExtResource("1_70nk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.662422, 0)
+starting_fragments = 3
 main_world = NodePath("../Main")
 masked_world = NodePath("../Masked")
 unmasked_world = NodePath("../Unmasked")
@@ -835,9 +836,6 @@ transform = Transform3D(24.75, 0, 0, 0, 1.5, 0, 0, 0, 23.1, 14.5, 48.21242, -100
 use_collision = true
 size = Vector3(0.3, 1, 0.3)
 
-[node name="MaskFragment" parent="." unique_id=133039147 instance=ExtResource("3_1pn4d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 34.453297, -3.3)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1825308381]
 stream = ExtResource("4_1pn4d")
 autoplay = true
@@ -861,6 +859,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.495122, 35.23417, -64.379
 
 [node name="Torch15" parent="Lights" unique_id=1391497172 instance=ExtResource("8_wae8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.495122, 35.23417, -70.35291)
+
+[node name="Torch20" parent="Lights" unique_id=2007133826 instance=ExtResource("8_wae8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.422511, 44.019245, -100.93941)
+
+[node name="Torch21" parent="Lights" unique_id=1240097418 instance=ExtResource("8_wae8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.46557, 46.698032, -100.93941)
+
+[node name="Torch22" parent="Lights" unique_id=763053314 instance=ExtResource("8_wae8j")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 17.474596, 55.684895, -109.22845)
+
+[node name="Torch23" parent="Lights" unique_id=884696321 instance=ExtResource("8_wae8j")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 11.750295, 55.684895, -109.22845)
 
 [node name="Torch16" parent="Lights" unique_id=545367999 instance=ExtResource("8_wae8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.495122, 35.23417, -76.168175)
@@ -963,4 +973,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.442993, -15.746988)
 curve = SubResource("Curve3D_q2dsb")
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path3D4" unique_id=164583392]
-transform = Transform3D(-0.004756833, -0.034405436, -0.9993944, -1.862645e-09, 0.99940693, -0.034405787, 0.9999885, -0.00016366094, -0.004754007, -8.584267, -3.9883575, -8.516836)
+transform = Transform3D(-0.004756833, -0.034405436, -0.9993935, -1.862645e-09, 0.99940693, -0.034405753, 0.9999885, -0.00016366094, -0.0047540027, -8.584267, -3.9883575, -8.516836)
+
+[node name="Door" parent="." unique_id=905259502 instance=ExtResource("11_56dhn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63392353, 35.228657, -2.3775206)
+next_scene = "res://scenes/level_four.tscn"

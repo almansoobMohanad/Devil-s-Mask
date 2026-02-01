@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c6785512vorto"]
+
+[ext_resource type="Script" uid="uid://b8slmxcc07ytn" path="res://scenes/door.gd" id="1_yfgsh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eyv6f"]
+size = Vector3(5, 5, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mg2as"]
+size = Vector3(5, 5, 0.2)
+
+[node name="Door" type="Area3D" unique_id=831905278]
+script = ExtResource("1_yfgsh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1331538078]
+shape = SubResource("BoxShape3D_eyv6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2131750587]
+mesh = SubResource("BoxMesh_mg2as")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1425432874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1620735)
+light_energy = 16.0
