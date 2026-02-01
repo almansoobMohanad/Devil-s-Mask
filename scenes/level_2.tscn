@@ -4,14 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_b4j7a"]
 [ext_resource type="Texture2D" uid="uid://c2igb5ydftnem" path="res://3d models/tree_brick_pavement_02_diff_4k.jpg" id="2_fldb1"]
 [ext_resource type="Texture2D" uid="uid://d0f5ahpn8dswx" path="res://3d models/tree_mossy_brick_diff_4k.jpg" id="3_guvtl"]
-[ext_resource type="PackedScene" uid="uid://c7onnyw72ot4a" path="res://scenes/enemy.tscn" id="4_6cvei"]
-[ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_eqxsl"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="4_6cvei"]
 [ext_resource type="PackedScene" path="res://scenes/torch.tscn" id="5_igmy8"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_ne2mo"]
-[ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_6cvei"]
 [ext_resource type="Texture2D" uid="uid://b8vv00lfo28pn" path="res://3d models/tree_rock_wall_13_diff_4k.jpg" id="6_wdtqu"]
-[ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="7_que50"]
-[ext_resource type="PackedScene" path="res://scenes/mask_fragment.tscn" id="8_hey2k"]
 [ext_resource type="AudioStream" uid="uid://drrxqhch6xvu4" path="res://Assets/Sfx/red-e-8-bit-chiptune-for-retro-gaming-356128.mp3" id="10_que50"]
 [ext_resource type="Texture2D" uid="uid://do6opc0j6mbad" path="res://3d models/mask png/Emit.png" id="14_7qsfm"]
 
@@ -319,26 +315,6 @@ use_collision = true
 height = 9.94375
 sides = 6
 
-[node name="MaskFragment1" parent="." unique_id=2051958364 instance=ExtResource("4_eqxsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.330021, 9.999069, -0.055437088)
-fragment_id = 1
-
-[node name="MaskFragment2" parent="." unique_id=630639763 instance=ExtResource("5_ne2mo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8108573, 10.108108, -0.6985321)
-fragment_id = 2
-
-[node name="MaskFragment3" parent="." unique_id=1658850588 instance=ExtResource("6_6cvei")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.628417, 10.050668, -0.6985321)
-fragment_id = 3
-
-[node name="MaskFragment4" parent="." unique_id=1152815010 instance=ExtResource("7_que50")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.069512, 10.050668, 2.7633743)
-fragment_id = 4
-
-[node name="MaskFragment5" parent="." unique_id=1709027928 instance=ExtResource("8_hey2k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.628417, 10.050668, 2.7633743)
-fragment_id = 5
-
 [node name="MaskFragment" parent="." unique_id=1572411642 instance=ExtResource("5_ne2mo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 21.2, -25.9)
 
@@ -347,7 +323,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.07262, 19.367388, -26.2932
 curve = SubResource("Curve3D_6cvei")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1091513477]
-transform = Transform3D(-0.034911513, -0.005169998, -0.9993747, 2.3282998e-10, 0.99998564, -0.0051731444, 0.99938756, -0.00018060328, -0.034911066, 0.2362976, -0.07530403, 0.31053352)
+transform = Transform3D(-0.034911513, -0.005169998, -0.99937534, 2.3282998e-10, 0.99998564, -0.0051731477, 0.99938756, -0.00018060328, -0.03491109, 0.2362976, -0.07530403, 0.31053352)
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=350822942]
 stream = ExtResource("10_que50")

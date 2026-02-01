@@ -162,7 +162,7 @@ _data = {
 }
 point_count = 2
 
-[node name="Node3D2" type="Node3D" unique_id=263277631]
+[node name="Node3D3" type="Node3D" unique_id=263277631]
 
 [node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") groups=["player"] instance=ExtResource("1_70nk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.662422, 0)
@@ -710,7 +710,7 @@ material_override = SubResource("StandardMaterial3D_58p72")
 mesh = SubResource("PlaneMesh_365g5")
 
 [node name="MaskFragment3" parent="Main/Lava/MeshInstance3D" unique_id=2051958364 instance=ExtResource("7_56dhn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.533027, 52.170326, -44.052834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.533027, 52.970325, -47.052834)
 fragment_id = 3
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Main/Lava" unique_id=1076703770]
