@@ -6,7 +6,7 @@ extends AnimatableBody3D
 const SPEED := 10.0
 
 func _physics_process(delta: float) -> void:
-    # Move along the path
-    path_follow.progress += SPEED * delta
-    global_transform.origin = path_follow.global_transform.origin
-    look_at(path_follow.global_transform.origin + path_follow.transform.basis.z, Vector3.UP)
+	# Move along the path
+	path_follow.progress += SPEED * delta
+	global_transform.origin = path_follow.global_transform.origin
+	look_at(path_follow.global_transform.origin + path_follow.transform.basis.z, Vector3.UP)

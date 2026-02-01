@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_h23n6"]
 [ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_uwxec"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="3_1pn4d"]
+[ext_resource type="Script" uid="uid://dqd0gjvix38pf" path="res://scenes/moving_platform.gd" id="3_p6vls"]
 [ext_resource type="AudioStream" uid="uid://cw7gbhdxd07ac" path="res://Assets/Sfx/356-8-bit-chiptune-game-music-357518.mp3" id="4_1pn4d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pn4d"]
@@ -30,8 +31,11 @@ albedo_texture = ExtResource("2_uwxec")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56dhn"]
 albedo_texture = ExtResource("2_uwxec")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax3dk"]
-albedo_texture = ExtResource("2_uwxec")
+[sub_resource type="BoxShape3D" id="BoxShape3D_p6vls"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p6vls"]
+size = Vector3(1, 0.1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2dsb"]
 albedo_texture = ExtResource("2_uwxec")
@@ -389,20 +393,48 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -4.7
 operation = 2
 radius = 0.90000004
 
-[node name="Moving Platform" type="CSGBox3D" parent="Main" unique_id=353567502]
-transform = Transform3D(24.75, 0, 0, 0, 1.5, 0, 0, 0, 23.1, -7.5, -0.25, -35.3)
-material_override = SubResource("StandardMaterial3D_ax3dk")
-use_collision = true
-size = Vector3(0.3, 1, 0.3)
+[node name="MovingPlatform" type="StaticBody3D" parent="Main" unique_id=97246397]
+transform = Transform3D(7.9987817, -0.13961925, 0, 0.13961925, 7.9987817, 0, 0, 0, 8, -7.5, -0.25, -35.3)
+script = ExtResource("3_p6vls")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Main/MovingPlatform" unique_id=393399564]
+transform = Transform3D(1.0000004, -3.7252903e-09, 0, 3.7252903e-09, 1.0000004, 0, 0, 0, 1, -0.008526087, -0.0019507948, 0.00032138824)
+shape = SubResource("BoxShape3D_p6vls")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Main/MovingPlatform" unique_id=275291797]
+mesh = SubResource("BoxMesh_p6vls")
+
+[node name="MovingPlatform2" type="StaticBody3D" parent="Main" unique_id=87350203]
+transform = Transform3D(7.9987817, -0.13961925, 0, 0.13961925, 7.9987817, 0, 0, 0, 8, 7.5096397, -0.25, -43.991695)
+script = ExtResource("3_p6vls")
+distance = -5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Main/MovingPlatform2" unique_id=1592369007]
+transform = Transform3D(1.0000004, -3.7252903e-09, 0, 3.7252903e-09, 1.0000004, 0, 0, 0, 1, -0.008526087, -0.0019507948, 0.00032138824)
+shape = SubResource("BoxShape3D_p6vls")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Main/MovingPlatform2" unique_id=2108351651]
+mesh = SubResource("BoxMesh_p6vls")
+
+[node name="MovingPlatform3" type="StaticBody3D" parent="Main" unique_id=191096714]
+transform = Transform3D(7.9987817, -0.13961925, 0, 0.13961925, 7.9987817, 0, 0, 0, 8, -7.6373367, -0.25, -53.586403)
+script = ExtResource("3_p6vls")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Main/MovingPlatform3" unique_id=207961865]
+transform = Transform3D(1.0000004, -3.7252903e-09, 0, 3.7252903e-09, 1.0000004, 0, 0, 0, 1, -0.008526087, -0.0019507948, 0.00032138824)
+shape = SubResource("BoxShape3D_p6vls")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Main/MovingPlatform3" unique_id=166675551]
+mesh = SubResource("BoxMesh_p6vls")
 
 [node name="Moving Platform2" type="CSGBox3D" parent="Main" unique_id=1961245962]
-transform = Transform3D(24.75, 0, 0, 0, 1.5, 0, 0, 0, 23.1, 7.5, -0.25, -44.2)
+transform = Transform3D(24.75, 0, 0, 0, 1.5, 0, 0, 0, 23.1, 25.394669, -0.25, -44.2)
 material_override = SubResource("StandardMaterial3D_q2dsb")
 use_collision = true
 size = Vector3(0.3, 1, 0.3)
 
 [node name="Moving Platform3" type="CSGBox3D" parent="Main" unique_id=24068367]
-transform = Transform3D(24.75, 0, 0, 0, 1.5, 0, 0, 0, 23.1, -7.5, -0.25, -53.100002)
+transform = Transform3D(24.75, 0, 0, 0, 1.5, 0, 0, 0, 23.1, -30.211563, -0.25, -53.100002)
 material_override = SubResource("StandardMaterial3D_p3r0x")
 use_collision = true
 size = Vector3(0.3, 1, 0.3)
