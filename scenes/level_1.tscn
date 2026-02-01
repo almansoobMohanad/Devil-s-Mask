@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://bkfahd4x4cnaa"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_014kd"]
-[ext_resource type="PackedScene" path="res://scenes/mask_fragment5.tscn" id="4_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://vo7vcx1g8mpl" path="res://scenes/mask_fragment5.tscn" id="4_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_15mv3"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_e3sih"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="7_2os1m"]
-[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="9_e3sih"]
+[ext_resource type="PackedScene" uid="uid://c6785512vorto" path="res://scenes/Door.tscn" id="8_15mv3"]
+[ext_resource type="PackedScene" uid="uid://b0nl8aq5rpmsb" path="res://scenes/enemy.tscn" id="9_e3sih"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ilcil"]
 size = Vector3(60, 1, 30)
@@ -61,3 +62,6 @@ fragment_id = 5
 
 [node name="Enemy" parent="Enemies" unique_id=1293850703 instance=ExtResource("9_e3sih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.607176, 3.0741343, 0)
+
+[node name="Door" parent="Enemies" unique_id=831905278 instance=ExtResource("8_15mv3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.688534, 22.71734, -26.023521)

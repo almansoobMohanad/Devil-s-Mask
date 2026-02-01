@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_70nk6"]
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_h23n6"]
 [ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_uwxec"]
-[ext_resource type="Script" path="res://scenes/moving_platform.gd" id="3_p6vls"]
+[ext_resource type="Script" uid="uid://dqd0gjvix38pf" path="res://scenes/moving_platform.gd" id="3_p6vls"]
 [ext_resource type="AudioStream" uid="uid://cw7gbhdxd07ac" path="res://Assets/Sfx/356-8-bit-chiptune-game-music-357518.mp3" id="4_1pn4d"]
 [ext_resource type="Texture2D" uid="uid://ne1a1ifvdjxt" path="res://3d models/gltf files/textures floor_rock_wall_16_diff_4k.jpg" id="4_hhfj6"]
 [ext_resource type="Texture2D" uid="uid://do6opc0j6mbad" path="res://3d models/mask png/Emit.png" id="6_ha73p"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="7_56dhn"]
-[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="7_vcx5n"]
-[ext_resource type="PackedScene" path="res://scenes/torch.tscn" id="8_wae8j"]
+[ext_resource type="PackedScene" uid="uid://b0nl8aq5rpmsb" path="res://scenes/enemy.tscn" id="7_vcx5n"]
+[ext_resource type="PackedScene" uid="uid://duqe10xkq7uqg" path="res://scenes/torch.tscn" id="8_wae8j"]
 [ext_resource type="PackedScene" uid="uid://c6785512vorto" path="res://scenes/Door.tscn" id="11_56dhn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pn4d"]
@@ -162,7 +162,7 @@ _data = {
 }
 point_count = 2
 
-[node name="Node3D2" type="Node3D" unique_id=263277631]
+[node name="Node3D3" type="Node3D" unique_id=263277631]
 
 [node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") groups=["player"] instance=ExtResource("1_70nk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.662422, 0)
@@ -973,8 +973,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.442993, -15.746988)
 curve = SubResource("Curve3D_q2dsb")
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path3D4" unique_id=164583392]
-transform = Transform3D(-0.004756833, -0.034405436, -0.9993935, -1.862645e-09, 0.99940693, -0.034405753, 0.9999885, -0.00016366094, -0.0047540027, -8.584267, -3.9883575, -8.516836)
+transform = Transform3D(-0.004756833, -0.034405436, -0.99939334, -1.862645e-09, 0.99940693, -0.03440575, 0.9999885, -0.00016366094, -0.004754002, -8.584267, -3.9883575, -8.516836)
 
 [node name="Door" parent="." unique_id=905259502 instance=ExtResource("11_56dhn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63392353, 35.228657, -2.3775206)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.128463, 52.742195, -116.430046)
 next_scene = "res://scenes/level_four.tscn"

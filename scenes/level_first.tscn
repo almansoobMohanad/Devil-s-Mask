@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dytw3g8qvof7r"]
+[gd_scene format=3 uid="uid://igy6whcgs8tg"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_rus8k"]
@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_15mv3"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_e3sih"]
 [ext_resource type="Texture2D" uid="uid://do6opc0j6mbad" path="res://3d models/mask png/Emit.png" id="6_3mg3q"]
-[ext_resource type="PackedScene" path="res://scenes/torch.tscn" id="6_imvab"]
+[ext_resource type="PackedScene" uid="uid://duqe10xkq7uqg" path="res://scenes/torch.tscn" id="6_imvab"]
 [ext_resource type="AudioStream" uid="uid://b8hcxxvi5hfje" path="res://Assets/Sfx/best-game-console-301284.mp3" id="7_3mg3q"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="8_xyhiu"]
+[ext_resource type="PackedScene" uid="uid://c6785512vorto" path="res://scenes/Door.tscn" id="10_1jf33"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nkto"]
 albedo_texture = ExtResource("2_yhxwk")
@@ -239,3 +240,7 @@ light_color = Color(0.8001832, 0.41909766, 0, 1)
 light_energy = 15.229
 light_indirect_energy = 4.344
 omni_range = 157.9273
+
+[node name="Door" parent="." unique_id=831905278 instance=ExtResource("10_1jf33")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.128866, 24.505539, -129.74057)
+next_scene = "res://scenes/level_2.tscn"
