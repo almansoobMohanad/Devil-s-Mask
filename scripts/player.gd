@@ -5,6 +5,7 @@ const JUMP_VELOCITY = 20
 const MASK_MULTIPLIER = 1
 const ATTACK_DISTANCE = 10 
 const FRAGMENT_TIME : float = 2.0  # Seconds per fragment
+const MASK_COOLDOWN_TIME : float = 1.0  # Cooldown time after transforming
 
 var health : int = 5
 var damage : int = 1
@@ -19,6 +20,7 @@ var is_transforming : bool = false  # Track if we're transforming
 var is_world_transformed : bool = false
 var transform_timer : float = 0.0
 var can_world_transform : bool = true
+var mask_cooldown_timer : float = 0.0
 
 # World references - Drag and drop in the inspector
 @export var main_world : Node3D
@@ -28,6 +30,12 @@ var can_world_transform : bool = true
 @onready var anim_player = $Man/AnimationPlayer
 @onready var model = $Man  # Reference to the visual model
 @onready var mask_node = $Man/mask  # Reference to the mask container
+
+@onready var sfx_jump: AudioStreamPlayer3D = $sfx_jump
+@onready var sfx_game_over: AudioStreamPlayer3D = $sfx_game_over
+@onready var sfx_masknextlevel: AudioStreamPlayer3D = $sfx_masknextlevel
+@onready var sfx_update_power: AudioStreamPlayer3D = $sfx_update_power
+@onready var sfx_take_damage: AudioStreamPlayer3D = $sfx_take_damage
 
 func _ready() -> void:
 	# Connect to animation finished signal
@@ -63,12 +71,21 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true  # Mark that we're jumping
 		#anim_player.play("Global/metarig_walking")  # Play jump animation immediately
+		sfx_jump.play()
 	
 	# Handle Transform (E key) - Now toggles world transformation
+	if mask_cooldown_timer > 0.0:
+		mask_cooldown_timer -= delta
+		print("Cooldown timer: ", mask_cooldown_timer)
+		if mask_cooldown_timer <= 0.0:
+			print("World transformation is ready again!")
+			can_world_transform = true
+	
 	if Input.is_action_just_pressed("transform") and not is_transforming and can_world_transform:
 		is_transforming = true
 		anim_player.play("Global/metarigAction", -1, 4)
 		toggle_world_transform()
+
 		
 	# Handle Attack (if armed)
 	if Input.is_action_just_pressed("attack") and isArmed:
@@ -136,6 +153,7 @@ func update_animation(direction: Vector3):
 func take_damage(amount: int) -> void:
 	print("Player took ", amount, " damage!")
 	health -= amount
+	sfx_take_damage.play()
 	if health <= 0:
 		game_over()
 
@@ -150,6 +168,7 @@ func deal_damage() -> int:
 
 func maskNextLevel() -> void:
 	maskLevel += 1
+	sfx_masknextlevel.play()
 
 func armPlayer() -> void:
 	isArmed = true
@@ -157,6 +176,7 @@ func armPlayer() -> void:
 func game_over() -> void:
 	print("Game Over!")
 	emit_signal("Game Over")
+	sfx_game_over.play()
 	# Implement game over logic here (e.g., restart level, show game over screen, etc.)
 
 # World Transformation Functions
@@ -164,7 +184,7 @@ func toggle_world_transform() -> void:
 	if mask_fragments <= 0:
 		print("No mask fragments available! Cannot transform worlds.")
 		return
-	
+
 	if is_world_transformed:
 		# Player wants to cancel transformation early
 		revert_world_transform()
@@ -175,6 +195,9 @@ func toggle_world_transform() -> void:
 		update_world_visibility()
 		update_mask_visibility()
 		print("World transformed! Time remaining: ", transform_timer, " seconds")
+		# Start cooldown
+		can_world_transform = false
+		mask_cooldown_timer = MASK_COOLDOWN_TIME
 
 func revert_world_transform() -> void:
 	is_world_transformed = false
@@ -182,6 +205,10 @@ func revert_world_transform() -> void:
 	update_world_visibility()
 	update_mask_visibility()
 	print("Reverted to normal world")
+	# Start cooldown if not already running
+	if mask_cooldown_timer <= 0.0:
+		can_world_transform = false
+		mask_cooldown_timer = MASK_COOLDOWN_TIME
 
 func update_world_visibility() -> void:
 	if main_world:
@@ -258,6 +285,7 @@ func add_mask_fragment(id: int):
 	update_player_power()
 
 func update_player_power():
+	sfx_update_power.play()
 	pass
 
 func update_mask_visibility():

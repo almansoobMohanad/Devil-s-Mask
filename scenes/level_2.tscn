@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://ddhp80jfrd3nd"]
+[gd_scene format=3 uid="uid://crj7x2rgsjfa7"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_3bmlt"]
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_b4j7a"]
 [ext_resource type="Texture2D" uid="uid://1qhwr531tuo7" path="res://Assets/rogland_clear_night_4k.exr" id="2_pbc48"]
-[ext_resource type="PackedScene" uid="uid://b0nl8aq5rpmsb" path="res://scenes/enemy.tscn" id="4_6cvei"]
+[ext_resource type="PackedScene" uid="uid://c7onnyw72ot4a" path="res://scenes/enemy.tscn" id="4_6cvei"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_eqxsl"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_6cvei"]
@@ -61,6 +61,8 @@ albedo_texture = ExtResource("2_b4j7a")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_una4e"]
 albedo_texture = ExtResource("2_b4j7a")
+
+[sub_resource type="Curve3D" id="Curve3D_6cvei"]
 
 [node name="Node3D" type="Node3D" unique_id=945736449]
 
@@ -194,6 +196,7 @@ sides = 6
 
 [node name="Enemy" parent="Unmasked" unique_id=1293850703 instance=ExtResource("4_6cvei")]
 transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 16.700146, 9.5, 1.5168896)
+path_follow_path = NodePath("../../Path3D/PathFollow3D")
 
 [node name="Masked" type="Node3D" parent="." unique_id=365929474]
 
@@ -241,7 +244,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.628417, 10.050668, -0.6985
 fragment_id = 3
 
 [node name="MaskFragment4" parent="." unique_id=1152815010 instance=ExtResource("7_que50")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7432604, 10.050668, 2.7633743)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.069512, 10.050668, 2.7633743)
 fragment_id = 4
 
 [node name="MaskFragment5" parent="." unique_id=1709027928 instance=ExtResource("8_hey2k")]
@@ -250,3 +253,8 @@ fragment_id = 5
 
 [node name="MaskFragment" parent="." unique_id=1572411642 instance=ExtResource("5_ne2mo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 21.2, -25.9)
+
+[node name="Path3D" type="Path3D" parent="." unique_id=456700214]
+curve = SubResource("Curve3D_6cvei")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1091513477]
