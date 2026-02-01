@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://vd8peoi6xnky"]
+[gd_scene format=3 uid="uid://dvp2l5qfbtg7g"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_014kd"]
 [ext_resource type="PackedScene" uid="uid://vo7vcx1g8mpl" path="res://scenes/mask_fragment5.tscn" id="4_5xbjy"]
@@ -18,6 +18,12 @@ albedo_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
 size = Vector3(60, 1, 30)
 
 [sub_resource type="Curve3D" id="Curve3D_pa8r4"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -29.299412, 1.4953451, 10.076695, 0, 0, 0, 0, 0, 0, -22.645124, 1.5533428, -9.501699),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [node name="Level 1" type="Node3D" unique_id=294888273]
 
@@ -33,8 +39,18 @@ shape = SubResource("BoxShape3D_ilcil")
 material_override = SubResource("StandardMaterial3D_3hls8")
 mesh = SubResource("BoxMesh_hbghi")
 
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1987030566]
+transform = Transform3D(0.24999999, 0.43301272, -1.8927587e-08, 0, -2.1855694e-08, -0.5, -0.43301272, 0.24999999, -1.0927846e-08, -9, 4.6638937, -8.277716)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1639097847]
+shape = SubResource("BoxShape3D_ilcil")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=1635462131]
+material_override = SubResource("StandardMaterial3D_3hls8")
+mesh = SubResource("BoxMesh_hbghi")
+
 [node name="Player" parent="." unique_id=1256405127 groups=["player"] instance=ExtResource("1_014kd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6139975, 0)
+transform = Transform3D(0.9999999, 0, 0.00054094195, 0, 1, 0, -0.00054094195, 0, 0.9999999, -6.5777206, 2.6139975, 9.164465)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1737187435]
 transform = Transform3D(1, 0, 0, 0, 0.10701033, 0.9942579, 0, -0.9942579, 0.10701033, -13.739376, 16.59112, -2.4024386)
@@ -62,10 +78,11 @@ fragment_id = 5
 [node name="Enemies" type="Node3D" parent="." unique_id=991316046]
 
 [node name="Enemy" parent="Enemies" unique_id=1293850703 instance=ExtResource("9_e3sih")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.607176, 3.0741343, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.33999, 3.0741343, 0)
 path_follow_path = NodePath("../../Path3D/PathFollow3D")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1768129282]
 curve = SubResource("Curve3D_pa8r4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1184637598]
+transform = Transform3D(0.9468071, -0.0009025668, -0.32179877, 0, 0.9999944, -0.0028047462, 0.32180002, 0.002655552, 0.9468034, -29.299412, 1.4953451, 10.076695)
