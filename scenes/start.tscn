@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bnc4ha02utut0"]
 
+[ext_resource type="Texture2D" uid="uid://dooew775mw6ni" path="res://Assets/GAME_SCREEN2.png" id="1_bodal"]
 [ext_resource type="AudioStream" uid="uid://dmd1mo8xf7gm1" path="res://Assets/Sfx/game-music-7408.mp3" id="1_u80x2"]
 [ext_resource type="AudioStream" uid="uid://mnwa07joc040" path="res://Assets/Sfx/game-start-6104.mp3" id="2_bodal"]
 
@@ -32,6 +33,12 @@ text = "Start"
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=1880704572]
 layout_mode = 2
 text = "Quit"
+
+[node name="GameScreen2" type="Sprite2D" parent="VBoxContainer" unique_id=224344750]
+z_index = -2
+position = Vector2(19, 49.5)
+scale = Vector2(0.6398148, 0.6398148)
+texture = ExtResource("1_bodal")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=215972667]
 stream = ExtResource("1_u80x2")
