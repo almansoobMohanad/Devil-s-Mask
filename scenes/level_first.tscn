@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_e3sih"]
 [ext_resource type="Texture2D" uid="uid://do6opc0j6mbad" path="res://3d models/mask png/Emit.png" id="6_3mg3q"]
 [ext_resource type="PackedScene" path="res://scenes/torch.tscn" id="6_imvab"]
+[ext_resource type="AudioStream" uid="uid://b8hcxxvi5hfje" path="res://Assets/Sfx/best-game-console-301284.mp3" id="7_3mg3q"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="8_xyhiu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nkto"]
@@ -30,7 +31,7 @@ uv1_scale = Vector3(2.375, 2.375, 2.375)
 [sub_resource type="PlaneMesh" id="PlaneMesh_bxrd5"]
 size = Vector2(300, 300)
 
-[node name="Node3D2" type="Node3D" unique_id=1341943185]
+[node name="Node3D3" type="Node3D" unique_id=1341943185]
 
 [node name="Player" parent="." unique_id=1256405127 instance=ExtResource("1_014kd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
@@ -198,6 +199,8 @@ transform = Transform3D(0.7617532, 0, -0.64786714, 0, 1, 0, 0.64786714, 0, 0.761
 transform = Transform3D(0.8648097, 0, 0.50209963, 0, 1, 0, -0.50209963, 0, 0.8648097, 8.369398, 22.219358, -92.93328)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2006789302]
+stream = ExtResource("7_3mg3q")
+volume_db = -5.0
 autoplay = true
 
 [node name="Lava" type="StaticBody3D" parent="." unique_id=1248925224]
