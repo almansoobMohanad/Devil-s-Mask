@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://0vs5m05d34m4"]
 
-[ext_resource type="Script" uid="uid://b2jyp7aqxheiu" path="res://scenes/mask_fragment.gd" id="1_sjjib"]
+[ext_resource type="Script" uid="uid://d2euf3sxm5pcs" path="res://scenes/mask_fragment.gd" id="1_sjjib"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_36g3t"]
 radius = 0.6
@@ -82,3 +82,9 @@ shape = SubResource("SphereShape3D_36g3t")
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 mesh = SubResource("ArrayMesh_rawgv")
 skeleton = NodePath("")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=379265506]
+transform = Transform3D(0.99997973, 0, 0.0063704085, 0, 1, 0, -0.0063704085, 0, 0.99997973, 0.011460543, 0.08863762, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 3.65
+light_indirect_energy = 1.1
