@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dyk1f45tlnxf5"]
+[gd_scene format=3 uid="uid://bjcoki65a6q6m"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_rus8k"]
@@ -135,6 +135,12 @@ material_override = SubResource("StandardMaterial3D_4nkto")
 operation = 2
 size = Vector3(1, 1, 2.7)
 
+[node name="Torch9" parent="Main/Mask Shrine" unique_id=933643341 instance=ExtResource("6_imvab")]
+transform = Transform3D(-0.010680334, 0, -0.23785631, 0, 1.0000795, 0, 0.23785569, 0, -0.010680164, 0.85032773, 6.812153, 1.2125816)
+
+[node name="Torch10" parent="Main/Mask Shrine" unique_id=1504117606 instance=ExtResource("6_imvab")]
+transform = Transform3D(-0.010680334, 0, -0.23785631, 0, 1.0000795, 0, 0.23785569, 0, -0.010680164, -0.75049376, 6.812153, 1.2125816)
+
 [node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Main" unique_id=1754863754]
 transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 10, 10, -0.09804797, -107)
 material_override = SubResource("StandardMaterial3D_4nkto")
@@ -190,12 +196,6 @@ transform = Transform3D(0.7617532, 0, -0.64786714, 0, 1, 0, 0.64786714, 0, 0.761
 
 [node name="Torch8" parent="." unique_id=1152154791 instance=ExtResource("6_imvab")]
 transform = Transform3D(0.8648097, 0, 0.50209963, 0, 1, 0, -0.50209963, 0, 0.8648097, 8.369398, 22.219358, -92.93328)
-
-[node name="Torch9" parent="." unique_id=933643341 instance=ExtResource("6_imvab")]
-transform = Transform3D(-0.0448573, 0, -0.9989934, 0, 1, 0, 0.9989934, 0, -0.0448573, 13.571365, 26.811611, -119.90716)
-
-[node name="Torch10" parent="." unique_id=1504117606 instance=ExtResource("6_imvab")]
-transform = Transform3D(-0.0448573, 0, -0.9989934, 0, 1, 0, 0.9989934, 0, -0.0448573, 6.8479357, 26.811611, -119.90716)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2006789302]
 autoplay = true
