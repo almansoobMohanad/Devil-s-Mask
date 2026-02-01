@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://c5hw4flg7p2fh"]
+[gd_scene format=3 uid="uid://df34rxeuig02p"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_x4gu4"]
+[ext_resource type="AudioStream" uid="uid://cvely8j1f8h80" path="res://Assets/Sfx/416-8-bit-chiptune-instrumental-for-games-339237.mp3" id="2_6malg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w2wna"]
 size = Vector3(60, 1, 30)
@@ -616,3 +617,7 @@ radius = 5.722699
 [node name="Masked" type="Node3D" parent="." unique_id=2135461556]
 
 [node name="Unmasked" type="Node3D" parent="." unique_id=953955007]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=72575298]
+stream = ExtResource("2_6malg")
+autoplay = true
