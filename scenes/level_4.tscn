@@ -1,14 +1,23 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://y8vgijeo4ido"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_huvaw"]
 [ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_6malg"]
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_x7blo"]
+=======
+[gd_scene format=3 uid="uid://bo7bslqp7xp0c"]
+
+[ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_huvaw"]
+[ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_6malg"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="3_6j14n"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_qsmat"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_yk4f3"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_cp0rv"]
 [ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="7_rr1tt"]
 [ext_resource type="PackedScene" path="res://scenes/mask_fragment5.tscn" id="8_7ewpb"]
 
+<<<<<<< Updated upstream
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rr1tt"]
 albedo_texture = ExtResource("2_6malg")
 
@@ -252,3 +261,134 @@ height = 13.75
 sides = 12
 
 [node name="Unmasked" type="Node3D" parent="." unique_id=991022825]
+=======
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6malg"]
+albedo_texture = ExtResource("2_6malg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6j14n"]
+albedo_texture = ExtResource("2_6malg")
+
+[sub_resource type="Curve3D" id="Curve3D_6j14n"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -5.049096, 1.476038, -14.360115, 0, 0, 0, 0, 0, 0, -5.1106358, 1.324749, -57.47054),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Node3D" type="Node3D" unique_id=500898637]
+
+[node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") groups=["player"] instance=ExtResource("1_huvaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.6, -0.2)
+main_world = NodePath("../Main")
+masked_world = NodePath("../Masked")
+unmasked_world = NodePath("../Unmasked")
+
+[node name="Main" type="Node3D" parent="." unique_id=2026288336]
+
+[node name="Floor" type="CSGBox3D" parent="Main" unique_id=1398205822]
+transform = Transform3D(13.75, 0, 0, 0, 1, 0, 0, 0, 13.75, 0, 6.5, -0.6875002)
+material_override = SubResource("StandardMaterial3D_6malg")
+use_collision = true
+size = Vector3(1, 20, 1.1)
+
+[node name="Bridge4" type="CSGBox3D" parent="Main" unique_id=1245447807]
+transform = Transform3D(-6.5567085e-09, 0, -0.36, 0, 1.3524001, 0, 0.15, 0, -1.57361e-08, -3.2037497e-06, 21.66546, -7.4000006)
+material_override = SubResource("StandardMaterial3D_6j14n")
+use_collision = true
+size = Vector3(8, 8.8, 39)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Main/Bridge4" unique_id=1182357238]
+transform = Transform3D(-8.742278e-07, 1, -6.556708e-07, 0, -4.371139e-08, -15, -20, -4.371139e-08, 2.866028e-14, 0.1749993, -5.5, 0)
+operation = 2
+height = 9.05
+sides = 22
+
+[node name="Floor2" type="CSGBox3D" parent="Main" unique_id=1942242292]
+transform = Transform3D(13.75, 0, 0, 0, 1, 0, 0, 0, 13.75, 0, 6.5, -71.6875)
+material_override = SubResource("StandardMaterial3D_6malg")
+use_collision = true
+size = Vector3(1, 20, 1.1)
+
+[node name="Floor3" type="CSGBox3D" parent="Main" unique_id=1744499067]
+transform = Transform3D(13.75, 0, 0, 0, 1, 0, 0, 0, 13.75, 0, 6.5, -142.6875)
+material_override = SubResource("StandardMaterial3D_6malg")
+use_collision = true
+size = Vector3(1, 20, 1.1)
+
+[node name="Unmasked" type="Node3D" parent="." unique_id=1089151964]
+
+[node name="Masked" type="Node3D" parent="." unique_id=2071261276]
+
+[node name="Bridge" type="CSGBox3D" parent="Masked" unique_id=632057286]
+transform = Transform3D(1, 0, 0, 0, 1.8, 0, 0, 0, 2.3716002, 0, 8, -36)
+use_collision = true
+size = Vector3(8, 9, 24)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Masked/Bridge" unique_id=1218748477]
+transform = Transform3D(-8.742278e-07, 1, -6.556708e-07, 0, -4.371139e-08, -15, -20, -4.371139e-08, 2.866028e-14, 0.1749993, -5.5, 0)
+operation = 2
+height = 9.05
+sides = 22
+
+[node name="Bridge2" type="CSGBox3D" parent="Masked" unique_id=796894260]
+transform = Transform3D(1, 0, 0, 0, 1.8, 0, 0, 0, 2.3716002, 0, 8, -107)
+use_collision = true
+size = Vector3(8, 9, 24)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Masked/Bridge2" unique_id=115540645]
+transform = Transform3D(-8.742278e-07, 1, -6.556708e-07, 0, -4.371139e-08, -15, -20, -4.371139e-08, 2.866028e-14, 0.1749993, -5.5, 0)
+operation = 2
+height = 9.05
+sides = 22
+
+[node name="Bridge3" type="CSGBox3D" parent="Masked" unique_id=875857268]
+transform = Transform3D(1, 0, 0, 0, 1.8, 0, 0, 0, 2.3716002, 0, 8, -178)
+use_collision = true
+size = Vector3(8, 9, 24)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Masked/Bridge3" unique_id=802318007]
+transform = Transform3D(-8.742278e-07, 1, -6.556708e-07, 0, -4.371139e-08, -15, -20, -4.371139e-08, 2.866028e-14, 0.1749993, -5.5, 0)
+operation = 2
+height = 9.05
+sides = 22
+
+[node name="Enemies" type="Node3D" parent="Masked" unique_id=1262726682]
+
+[node name="Enemy" parent="Masked/Enemies" unique_id=1293850703 instance=ExtResource("3_6j14n")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 17, -19)
+path_follow_path = NodePath("../../Path3D/PathFollow3D")
+
+[node name="Enemy2" parent="Masked/Enemies" unique_id=1407117946 instance=ExtResource("3_6j14n")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4, -19)
+path_follow_path = NodePath("../../Path3D2/PathFollow3D")
+
+[node name="Path3D" type="Path3D" parent="Masked" unique_id=1867735234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 16, 0)
+curve = SubResource("Curve3D_6j14n")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Masked/Path3D" unique_id=1021445294]
+transform = Transform3D(0.999995, -5.0094736e-06, 0.0014274732, -4.5474553e-13, 0.99998903, 0.0035092984, -0.0014274816, -0.0035092912, 0.99998903, -5.049096, 1.476038, -14.360115)
+
+[node name="Path3D2" type="Path3D" parent="Masked" unique_id=348093741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 16, -72)
+curve = SubResource("Curve3D_6j14n")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Masked/Path3D2" unique_id=1269736562]
+transform = Transform3D(0.999995, -5.0094736e-06, 0.0014274732, -4.5474553e-13, 0.99998903, 0.0035092984, -0.0014274816, -0.0035092912, 0.99998903, -5.049096, 1.476038, -14.360115)
+
+[node name="MaskFragment" parent="." unique_id=2051958364 instance=ExtResource("4_qsmat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 17, -4)
+
+[node name="MaskFragment2" parent="." unique_id=2116117881 instance=ExtResource("5_yk4f3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 17, -3)
+
+[node name="MaskFragment3" parent="." unique_id=1576099771 instance=ExtResource("6_cp0rv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 17, -1)
+
+[node name="MaskFragment4" parent="." unique_id=1577881511 instance=ExtResource("7_rr1tt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 17, -1)
+
+[node name="MaskFragment5" parent="." unique_id=945353090 instance=ExtResource("8_7ewpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 17, 1)
+>>>>>>> Stashed changes
