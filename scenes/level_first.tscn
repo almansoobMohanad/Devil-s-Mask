@@ -1,11 +1,10 @@
-[gd_scene format=3 uid="uid://dyk1f45tlnxf5"]
+[gd_scene format=3 uid="uid://dytw3g8qvof7r"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_rus8k"]
 [ext_resource type="Texture2D" uid="uid://xi45j7eeur4q" path="res://3d models/tree_rock_wall_16_diff_4k.jpg" id="2_yhxwk"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_15mv3"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_e3sih"]
-[ext_resource type="AudioStream" uid="uid://bjs7mgm5p4r58" path="res://Assets/Sfx/game-background-1-321720.mp3" id="6_imvab"]
 [ext_resource type="PackedScene" path="res://scenes/torch.tscn" id="6_imvab"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nkto"]
@@ -205,7 +204,3 @@ transform = Transform3D(-0.0448573, 0, -0.9989934, 0, 1, 0, 0.9989934, 0, -0.044
 
 [node name="Torch10" parent="." unique_id=1504117606 instance=ExtResource("6_imvab")]
 transform = Transform3D(-0.0448573, 0, -0.9989934, 0, 1, 0, 0.9989934, 0, -0.0448573, 6.8479357, 26.811611, -119.90716)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2006789302]
-stream = ExtResource("6_imvab")
-autoplay = true
