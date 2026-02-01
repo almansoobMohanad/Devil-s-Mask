@@ -244,7 +244,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.628417, 10.050668, -0.6985
 fragment_id = 3
 
 [node name="MaskFragment4" parent="." unique_id=1152815010 instance=ExtResource("7_que50")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7432604, 10.050668, 2.7633743)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.069512, 10.050668, 2.7633743)
 fragment_id = 4
 
 [node name="MaskFragment5" parent="." unique_id=1709027928 instance=ExtResource("8_hey2k")]
