@@ -42,7 +42,6 @@ func _physics_process(delta: float) -> void:
 	mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES)
 	var radius = SIGHT_RANGE
 	var half_angle = deg_to_rad(VIEW_ANGLE / 2.0)
-	var forward = Vector3(0, 1, radius)
 	var left = Vector3(radius * sin(-half_angle), 0, radius * cos(-half_angle))
 	var right = Vector3(radius * sin(half_angle), 0, radius * cos(half_angle))
 	mesh.surface_add_vertex(Vector3.ZERO)
