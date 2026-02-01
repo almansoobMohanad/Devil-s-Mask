@@ -1,14 +1,15 @@
-[gd_scene format=3 uid="uid://crj7x2rgsjfa7"]
+[gd_scene format=3 uid="uid://0kel41mk6wh8"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_3bmlt"]
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_b4j7a"]
 [ext_resource type="Texture2D" uid="uid://1qhwr531tuo7" path="res://Assets/rogland_clear_night_4k.exr" id="2_pbc48"]
-[ext_resource type="PackedScene" uid="uid://c7onnyw72ot4a" path="res://scenes/enemy.tscn" id="4_6cvei"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="4_6cvei"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_eqxsl"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_6cvei"]
 [ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="7_que50"]
 [ext_resource type="PackedScene" path="res://scenes/mask_fragment.tscn" id="8_hey2k"]
+[ext_resource type="AudioStream" uid="uid://drrxqhch6xvu4" path="res://Assets/Sfx/red-e-8-bit-chiptune-for-retro-gaming-356128.mp3" id="10_que50"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_eqxsl"]
 panorama = ExtResource("2_pbc48")
@@ -258,3 +259,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 21.2, -25.9)
 curve = SubResource("Curve3D_6cvei")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1091513477]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=350822942]
+stream = ExtResource("10_que50")
+volume_db = -1.0
+autoplay = true
