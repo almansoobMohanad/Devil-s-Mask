@@ -1172,9 +1172,24 @@ transform = Transform3D(-7.285231e-08, 0, 1.6666665, 0, 1.6666665, 0, -1.6666665
 
 [node name="mask_5" type="MeshInstance3D" parent="Man/mask" unique_id=451349725]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.38, 1.266, -1.186)
-visible = false
 mesh = SubResource("ArrayMesh_02jyd")
 skeleton = NodePath("")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Man/mask/mask_5" unique_id=723649281]
+transform = Transform3D(-0.95227337, 0, -0.3052465, 0, 1, 0, 0.3052465, 0, -0.95227337, -0.06661808, 0, -1.2727976)
+light_color = Color(0.8, 0, 0.01333313, 1)
+light_energy = 1.667
+light_indirect_energy = 1.277
+light_volumetric_fog_energy = 3.147
+light_specular = 0.223
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Man/mask/mask_5" unique_id=1634082905]
+transform = Transform3D(-0.9522733, -7.497147e-08, -0.30524653, 0.0010708825, -0.9999938, -0.003340572, -0.30524465, -0.0035080207, 0.95226747, -0.06661808, 0, 0.24619699)
+light_color = Color(0.8, 0, 0.01333313, 1)
+light_energy = 1.453
+light_indirect_energy = 1.277
+light_volumetric_fog_energy = 3.147
+light_specular = 0.223
 
 [node name="mask_2" type="MeshInstance3D" parent="Man/mask" unique_id=756366846]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.38, 1.266, -1.186)
@@ -1182,11 +1197,43 @@ visible = false
 mesh = SubResource("ArrayMesh_qgs6d")
 skeleton = NodePath("")
 
+[node name="SpotLight3D" type="SpotLight3D" parent="Man/mask/mask_2" unique_id=1659305666]
+transform = Transform3D(0.8136492, -1.587905e-07, 0.5813562, -0.0020395736, -0.99999386, 0.0028542543, 0.5813527, -0.0035080803, -0.8136442, 2.1931608, 0.020902634, -5.712348)
+light_color = Color(0.8, 0, 0.01333313, 1)
+light_energy = 2.31
+light_indirect_energy = 1.277
+light_volumetric_fog_energy = 3.147
+light_specular = 0.223
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Man/mask/mask_2" unique_id=1949287496]
+transform = Transform3D(0.9999994, 0.0010709577, 1.787623e-06, -0.0010709574, 0.9999994, -0.00016744988, -1.9669537e-06, 0.00016744786, 1, -0.12517884, -0.0044693947, 1.5200982)
+light_color = Color(0.8, 0, 0.01333313, 1)
+light_energy = 2.31
+light_indirect_energy = 1.277
+light_volumetric_fog_energy = 3.147
+light_specular = 0.223
+
 [node name="mask_3" type="MeshInstance3D" parent="Man/mask" unique_id=1681953079]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.38, 1.266, -1.186)
 visible = false
 mesh = SubResource("ArrayMesh_0plnw")
 skeleton = NodePath("")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Man/mask/mask_3" unique_id=780006447]
+transform = Transform3D(0.81364745, -0.001071085, 0.5813576, -0.0030082653, -0.99999267, 0.0023678893, 0.5813508, -0.003675505, -0.81364477, 10.84068, 0.09308243, -27.041649)
+light_color = Color(0.8, 0, 0.01333313, 1)
+light_energy = 2.31
+light_indirect_energy = 1.277
+light_volumetric_fog_energy = 3.147
+light_specular = 0.223
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Man/mask/mask_3" unique_id=204243779]
+transform = Transform3D(0.99999774, 0.0021419146, 3.3959125e-06, -0.0021419132, 0.9999977, -0.00033490156, -4.1132353e-06, 0.00033489353, 0.99999994, -0.75108314, -0.02741909, 9.120587)
+light_color = Color(0.8, 0, 0.01333313, 1)
+light_energy = 2.31
+light_indirect_energy = 1.277
+light_volumetric_fog_energy = 3.147
+light_specular = 0.223
 
 [node name="mask_4" type="MeshInstance3D" parent="Man/mask" unique_id=2106826581]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.38, 1.266, -1.186)
@@ -1194,8 +1241,42 @@ visible = false
 mesh = SubResource("ArrayMesh_o5t2w")
 skeleton = NodePath("")
 
+[node name="SpotLight3D" type="SpotLight3D" parent="Man/mask/mask_4" unique_id=135728007]
+transform = Transform3D(0.8136412, -0.0032129344, 0.5813585, -0.004945643, -0.9999868, 0.0013951575, 0.58134633, -0.0040103486, -0.8136464, 53.452736, 0.36717415, -126.08773)
+light_color = Color(0.8, 0, 0.01333313, 1)
+light_energy = 2.31
+light_indirect_energy = 1.277
+light_volumetric_fog_energy = 3.147
+light_specular = 0.223
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Man/mask/mask_4" unique_id=746902665]
+transform = Transform3D(0.9999908, 0.0042838203, 6.0744874e-06, -0.004283815, 0.9999906, -0.00066980947, -8.9437735e-06, 0.0006697773, 0.99999976, -4.5066295, -0.1717434, 54.723495)
+light_color = Color(0.8, 0, 0.01333313, 1)
+light_energy = 2.31
+light_indirect_energy = 1.277
+light_volumetric_fog_energy = 3.147
+light_specular = 0.223
+
 [node name="mask_1" type="MeshInstance3D" parent="Man/mask" unique_id=1138688017]
 transform = Transform3D(0.20000002, 0, 5.293956e-23, 0, 0.20000002, 0, -5.293956e-23, 0, 0.20000002, -1.38, 1.266, -1.186)
 visible = false
 mesh = SubResource("ArrayMesh_tv74d")
 skeleton = NodePath("")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Man/mask/mask_1" unique_id=1491082517]
+transform = Transform3D(0.81361604, -0.0074967677, 0.5813542, -0.008820568, -0.9999609, -0.00055029965, 0.5813356, -0.0046801423, -0.81365037, 262.75864, 0.9414754, -575.7162)
+light_color = Color(0.8, 0, 0.01333313, 1)
+light_energy = 2.934
+light_indirect_energy = 2.662
+light_volumetric_fog_energy = 3.563
+light_size = 0.147
+light_specular = 0.223
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Man/mask/mask_1" unique_id=1725979926]
+transform = Transform3D(0.9999633, 0.008567563, 9.2795735e-06, -0.008567544, 0.9999624, -0.0013396385, -2.0756663e-05, 0.0013395097, 0.9999991, -27.041586, -1.1171961, 328.3405)
+light_color = Color(0.8, 0, 0.01333313, 1)
+light_energy = 2.934
+light_indirect_energy = 2.662
+light_volumetric_fog_energy = 3.563
+light_size = 0.147
+light_specular = 0.223

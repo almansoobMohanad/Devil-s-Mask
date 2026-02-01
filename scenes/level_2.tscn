@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_3bmlt"]
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_b4j7a"]
 [ext_resource type="Texture2D" uid="uid://1qhwr531tuo7" path="res://Assets/rogland_clear_night_4k.exr" id="2_pbc48"]
-[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="4_6cvei"]
+[ext_resource type="PackedScene" uid="uid://b0nl8aq5rpmsb" path="res://scenes/enemy.tscn" id="4_6cvei"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_eqxsl"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_6cvei"]
@@ -229,11 +229,11 @@ height = 9.94375
 sides = 6
 
 [node name="MaskFragment1" parent="." unique_id=2051958364 instance=ExtResource("4_eqxsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.766943, 9.941629, -0.055437088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.330021, 9.999069, -0.055437088)
 fragment_id = 1
 
 [node name="MaskFragment2" parent="." unique_id=630639763 instance=ExtResource("5_ne2mo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2477794, 10.050668, -0.6985321)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8108573, 10.108108, -0.6985321)
 fragment_id = 2
 
 [node name="MaskFragment3" parent="." unique_id=1658850588 instance=ExtResource("6_6cvei")]

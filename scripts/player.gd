@@ -114,6 +114,7 @@ func _on_animation_finished(anim_name: String):
 	# When transform animation finishes, allow other animations
 	if anim_name == "Global/metarigAction":
 		is_transforming = false
+		update_mask_visibility()
 
 func rotate_model(direction: Vector3, delta: float):
 	# Get the angle to face based on movement direction
@@ -186,12 +187,14 @@ func toggle_world_transform() -> void:
 		is_world_transformed = true
 		transform_timer = mask_fragments * FRAGMENT_TIME
 		update_world_visibility()
+		update_mask_visibility()
 		print("World transformed! Time remaining: ", transform_timer, " seconds")
 
 func revert_world_transform() -> void:
 	is_world_transformed = false
 	transform_timer = 0.0
 	update_world_visibility()
+	update_mask_visibility()
 	print("Reverted to normal world")
 
 func update_world_visibility() -> void:
@@ -273,26 +276,23 @@ func update_player_power():
 
 func update_mask_visibility():
 	if not mask_node:
-		print("ERROR: mask_node is null!")
 		return
-	
-	print("Updating mask visibility. Fragments: ", mask_fragments)
 	
 	# Hide all masks first
 	for i in range(1, 6):
 		var mask_piece = mask_node.get_node_or_null("mask_" + str(i))
 		if mask_piece and mask_piece is MeshInstance3D:
 			mask_piece.visible = false
-			print("Hiding mask_", i)
-		else:
-			print("Could not find mask_", i)
 	
+	# Only show masks while transformed and after the transform animation ends
+	if not is_world_transformed or is_transforming:
+		return
+
 	# Show masks based on fragment count (1 fragment = mask_1, 2 = mask_2, etc.)
 	for i in range(1, min(mask_fragments + 1, 6)):
 		var mask_piece = mask_node.get_node_or_null("mask_" + str(i))
 		if mask_piece and mask_piece is MeshInstance3D:
 			mask_piece.visible = true
-			print("Showing mask_", i)
 
 func get_remaining_transform_time() -> float:
 	return transform_timer
