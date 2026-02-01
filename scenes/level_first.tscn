@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://xi45j7eeur4q" path="res://3d models/tree_rock_wall_16_diff_4k.jpg" id="2_yhxwk"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_15mv3"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_e3sih"]
-[ext_resource type="AudioStream" uid="uid://bjs7mgm5p4r58" path="res://Assets/Sfx/game-background-1-321720.mp3" id="6_imvab"]
+[ext_resource type="Texture2D" uid="uid://do6opc0j6mbad" path="res://3d models/mask png/Emit.png" id="6_3mg3q"]
 [ext_resource type="PackedScene" path="res://scenes/torch.tscn" id="6_imvab"]
+[ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="8_xyhiu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nkto"]
 albedo_texture = ExtResource("2_yhxwk")
@@ -15,21 +16,21 @@ uv1_scale = Vector3(1.73, 1.73, 1.73)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa8r4"]
 albedo_texture = ExtResource("2_rus8k")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yhxwk"]
-size = Vector3(60, 1, 30)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imvab"]
-albedo_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_3mg3q"]
-size = Vector3(60, 1, 30)
-
 [sub_resource type="Environment" id="Environment_imvab"]
 background_mode = 1
 background_energy_multiplier = 0.0
 ambient_light_energy = 0.0
 
-[node name="Node3D" type="Node3D" unique_id=1341943185]
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kbqg4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1jf33"]
+albedo_texture = ExtResource("6_3mg3q")
+uv1_scale = Vector3(2.375, 2.375, 2.375)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bxrd5"]
+size = Vector2(300, 300)
+
+[node name="Node3D2" type="Node3D" unique_id=1341943185]
 
 [node name="Player" parent="." unique_id=1256405127 instance=ExtResource("1_014kd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
@@ -166,16 +167,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 23, -125)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=773674098]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=28811951]
-transform = Transform3D(-6.556708e-07, 0, -15, 0, 15, 0, 15, 0, -6.556708e-07, 0, -16.487385, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=155303233]
-shape = SubResource("BoxShape3D_yhxwk")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1520825474]
-material_override = SubResource("StandardMaterial3D_imvab")
-mesh = SubResource("BoxMesh_3mg3q")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=790046781]
 environment = SubResource("Environment_imvab")
 
@@ -207,5 +198,41 @@ transform = Transform3D(-0.0448573, 0, -0.9989934, 0, 1, 0, 0.9989934, 0, -0.044
 transform = Transform3D(-0.0448573, 0, -0.9989934, 0, 1, 0, 0.9989934, 0, -0.0448573, 6.8479357, 26.811611, -119.90716)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2006789302]
-stream = ExtResource("6_imvab")
 autoplay = true
+
+[node name="Lava" type="StaticBody3D" parent="." unique_id=1248925224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.748808, -67.572235)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lava" unique_id=1721129888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.62075, 0)
+shape = SubResource("WorldBoundaryShape3D_kbqg4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lava" unique_id=66192816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.997879, -11.209351, 0.029907227)
+material_override = SubResource("StandardMaterial3D_1jf33")
+mesh = SubResource("PlaneMesh_bxrd5")
+
+[node name="MaskFragment3" parent="Lava/MeshInstance3D" unique_id=2058853540 instance=ExtResource("8_xyhiu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.533027, 52.170326, -44.052834)
+fragment_id = 3
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lava" unique_id=38025010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.464554, 2.502121, 0)
+light_color = Color(0.8001832, 0.41909766, 0, 1)
+light_energy = 15.229
+light_indirect_energy = 4.344
+omni_range = 157.9273
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lava" unique_id=263420331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.464554, 2.502121, 94.06616)
+light_color = Color(0.8001832, 0.41909766, 0, 1)
+light_energy = 15.229
+light_indirect_energy = 4.344
+omni_range = 157.9273
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lava" unique_id=722483960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.464554, 2.502121, -78.8566)
+light_color = Color(0.8001832, 0.41909766, 0, 1)
+light_energy = 15.229
+light_indirect_energy = 4.344
+omni_range = 157.9273
