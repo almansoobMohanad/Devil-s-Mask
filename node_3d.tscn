@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://yhhdp38sbys5"]
+
+[ext_resource type="PackedScene" uid="uid://bt7tw50td7wv4" path="res://3d models/mask.blend" id="1_a202f"]
+
+[node name="Node3D" type="Node3D" unique_id=1300688334]
+
+[node name="mask" parent="." unique_id=1061281985 instance=ExtResource("1_a202f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7514157, 0.83799696, -0.1729517)
