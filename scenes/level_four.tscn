@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="7_tuwuf"]
 [ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="8_0xifx"]
 [ext_resource type="PackedScene" uid="uid://vo7vcx1g8mpl" path="res://scenes/mask_fragment5.tscn" id="9_e2i88"]
-[ext_resource type="PackedScene" uid="uid://c7onnyw72ot4a" path="res://scenes/enemy.tscn" id="11_tuwuf"]
 [ext_resource type="AudioStream" uid="uid://cvely8j1f8h80" path="res://Assets/Sfx/416-8-bit-chiptune-instrumental-for-games-339237.mp3" id="10_iu4sr"]
+[ext_resource type="PackedScene" uid="uid://c7onnyw72ot4a" path="res://scenes/enemy.tscn" id="11_tuwuf"]
+[ext_resource type="Texture2D" uid="uid://do6opc0j6mbad" path="res://3d models/mask png/Emit.png" id="14_i0usi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mgce"]
 albedo_texture = ExtResource("2_bxape")
@@ -99,6 +100,15 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i664h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sr1q"]
+albedo_texture = ExtResource("14_i0usi")
+uv1_scale = Vector3(2.375, 2.375, 2.375)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2krjc"]
+size = Vector2(300, 300)
 
 [node name="Node3D" type="Node3D" unique_id=971758700]
 
@@ -405,3 +415,40 @@ transform = Transform3D(0.6739156, 0, -0.7388084, 0, 1, 0, 0.7388084, 0, 0.67391
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=860249625]
 stream = ExtResource("10_iu4sr")
 autoplay = true
+
+[node name="Lava" type="StaticBody3D" parent="." unique_id=1923849900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.998337, 5.2927628, -110.35512)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lava" unique_id=597504545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.62075, 0)
+shape = SubResource("WorldBoundaryShape3D_i664h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lava" unique_id=1914801979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.997879, -11.209351, 0.029907227)
+material_override = SubResource("StandardMaterial3D_8sr1q")
+mesh = SubResource("PlaneMesh_2krjc")
+
+[node name="MaskFragment3" parent="Lava/MeshInstance3D" unique_id=2001480374 instance=ExtResource("7_tuwuf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.533027, 52.170326, -44.052834)
+fragment_id = 3
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lava" unique_id=1141948246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.464554, 2.502121, 0)
+light_color = Color(0.8001832, 0.41909766, 0, 1)
+light_energy = 15.229
+light_indirect_energy = 4.344
+omni_range = 157.9273
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lava" unique_id=2057555908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.464554, 2.502121, 94.06616)
+light_color = Color(0.8001832, 0.41909766, 0, 1)
+light_energy = 15.229
+light_indirect_energy = 4.344
+omni_range = 157.9273
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lava" unique_id=775588001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.464554, 2.502121, -78.8566)
+light_color = Color(0.8001832, 0.41909766, 0, 1)
+light_energy = 15.229
+light_indirect_energy = 4.344
+omni_range = 157.9273

@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://ddhp80jfrd3nd"]
+[gd_scene format=3 uid="uid://crj7x2rgsjfa7"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_3bmlt"]
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_b4j7a"]
 [ext_resource type="Texture2D" uid="uid://c2igb5ydftnem" path="res://3d models/tree_brick_pavement_02_diff_4k.jpg" id="2_fldb1"]
 [ext_resource type="Texture2D" uid="uid://d0f5ahpn8dswx" path="res://3d models/tree_mossy_brick_diff_4k.jpg" id="3_guvtl"]
-[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="4_6cvei"]
+[ext_resource type="PackedScene" uid="uid://c7onnyw72ot4a" path="res://scenes/enemy.tscn" id="4_6cvei"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_eqxsl"]
 [ext_resource type="PackedScene" path="res://scenes/torch.tscn" id="5_igmy8"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_ne2mo"]
@@ -67,6 +67,12 @@ albedo_texture = ExtResource("6_wdtqu")
 albedo_texture = ExtResource("2_b4j7a")
 
 [sub_resource type="Curve3D" id="Curve3D_6cvei"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.2362976, -0.07530403, 0.31053352, 0, 0, 0, 0, 0, 0, 20.685726, 0.030550003, 1.0248909),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [sub_resource type="Environment" id="Environment_7egwj"]
 background_mode = 1
@@ -181,6 +187,12 @@ material_override = SubResource("StandardMaterial3D_56dhn")
 operation = 2
 size = Vector3(1, 1, 2.7)
 
+[node name="Torch9" parent="Main/Mask Shrine" unique_id=948839827 instance=ExtResource("5_igmy8")]
+transform = Transform3D(-0.010680334, 0, -0.23785631, 0, 1.0000795, 0, 0.23785569, 0, -0.010680164, 0.85032773, 6.812153, 1.2125816)
+
+[node name="Torch10" parent="Main/Mask Shrine" unique_id=1678226646 instance=ExtResource("5_igmy8")]
+transform = Transform3D(-0.010680334, 0, -0.23785631, 0, 1.0000795, 0, 0.23785569, 0, -0.010680164, -0.75049376, 6.812153, 1.2125816)
+
 [node name="Bridge5" type="CSGBox3D" parent="Main" unique_id=507614556]
 transform = Transform3D(-1, 0, 5.2453668e-08, 0, 3.3810003, 0, -8.742278e-08, 0, -0.6, 79, 1.815, -16.5)
 material_override = SubResource("StandardMaterial3D_bgibu")
@@ -193,7 +205,7 @@ operation = 2
 height = 9.05
 sides = 22
 
-[node name="Torch2" parent="Main" unique_id=948839827 instance=ExtResource("5_igmy8")]
+[node name="Torch2" parent="Main" unique_id=285959928 instance=ExtResource("5_igmy8")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 17.958529, 6.254918, 4.7341275)
 
 [node name="Torch3" parent="Main" unique_id=1126849806 instance=ExtResource("5_igmy8")]
@@ -271,7 +283,7 @@ height = 16.435938
 sides = 6
 
 [node name="Enemy" parent="Unmasked" unique_id=1293850703 instance=ExtResource("4_6cvei")]
-transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 16.700146, 9.5, 1.5168896)
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 57.76045, 19.282034, -26.528137)
 path_follow_path = NodePath("../../Path3D/PathFollow3D")
 
 [node name="Masked" type="Node3D" parent="." unique_id=365929474]
@@ -331,9 +343,11 @@ fragment_id = 5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 21.2, -25.9)
 
 [node name="Path3D" type="Path3D" parent="." unique_id=456700214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.07262, 19.367388, -26.293224)
 curve = SubResource("Curve3D_6cvei")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1091513477]
+transform = Transform3D(-0.034911513, -0.005169998, -0.9993747, 2.3282998e-10, 0.99998564, -0.0051731444, 0.99938756, -0.00018060328, -0.034911066, 0.2362976, -0.07530403, 0.31053352)
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=350822942]
 stream = ExtResource("10_que50")
