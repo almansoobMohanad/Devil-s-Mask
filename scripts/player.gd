@@ -5,6 +5,7 @@ const JUMP_VELOCITY = 20
 const MASK_MULTIPLIER = 1
 const ATTACK_DISTANCE = 10 
 const FRAGMENT_TIME : float = 2.0  # Seconds per fragment
+const MASK_COOLDOWN_TIME : float = 1.0  # Cooldown time after transforming
 
 var health : int = 5
 var damage : int = 1
@@ -19,6 +20,7 @@ var is_transforming : bool = false  # Track if we're transforming
 var is_world_transformed : bool = false
 var transform_timer : float = 0.0
 var can_world_transform : bool = true
+var mask_cooldown_timer : float = 0.0
 
 # World references - Drag and drop in the inspector
 @export var main_world : Node3D
@@ -70,11 +72,20 @@ func _physics_process(delta: float) -> void:
 		is_jumping = true  # Mark that we're jumping
 		#anim_player.play("Global/metarig_walking")  # Play jump animation immediately
 		sfx_jump.play()
+	
 	# Handle Transform (E key) - Now toggles world transformation
+	if mask_cooldown_timer > 0.0:
+		mask_cooldown_timer -= delta
+		print("Cooldown timer: ", mask_cooldown_timer)
+		if mask_cooldown_timer <= 0.0:
+			print("World transformation is ready again!")
+			can_world_transform = true
+	
 	if Input.is_action_just_pressed("transform") and not is_transforming and can_world_transform:
 		is_transforming = true
 		anim_player.play("Global/metarigAction", -1, 4)
 		toggle_world_transform()
+
 		
 	# Handle Attack (if armed)
 	if Input.is_action_just_pressed("attack") and isArmed:
@@ -173,7 +184,7 @@ func toggle_world_transform() -> void:
 	if mask_fragments <= 0:
 		print("No mask fragments available! Cannot transform worlds.")
 		return
-	
+
 	if is_world_transformed:
 		# Player wants to cancel transformation early
 		revert_world_transform()
@@ -184,6 +195,9 @@ func toggle_world_transform() -> void:
 		update_world_visibility()
 		update_mask_visibility()
 		print("World transformed! Time remaining: ", transform_timer, " seconds")
+		# Start cooldown
+		can_world_transform = false
+		mask_cooldown_timer = MASK_COOLDOWN_TIME
 
 func revert_world_transform() -> void:
 	is_world_transformed = false
@@ -191,6 +205,10 @@ func revert_world_transform() -> void:
 	update_world_visibility()
 	update_mask_visibility()
 	print("Reverted to normal world")
+	# Start cooldown if not already running
+	if mask_cooldown_timer <= 0.0:
+		can_world_transform = false
+		mask_cooldown_timer = MASK_COOLDOWN_TIME
 
 func update_world_visibility() -> void:
 	if main_world:
