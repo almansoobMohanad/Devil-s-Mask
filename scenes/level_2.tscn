@@ -64,7 +64,7 @@ albedo_texture = ExtResource("2_b4j7a")
 [node name="Node3D" type="Node3D" unique_id=945736449]
 
 [node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") groups=["player"] instance=ExtResource("1_3bmlt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5, -0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 10.5, -0.1)
 main_world = NodePath("../Main")
 masked_world = NodePath("../Masked")
 unmasked_world = NodePath("../Unmasked")
@@ -81,7 +81,7 @@ environment = SubResource("Environment_wo48x")
 [node name="Main" type="Node3D" parent="." unique_id=1603335212]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Main" unique_id=1800634460]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.6, 4.5, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17, 4.5, 0)
 material_override = SubResource("StandardMaterial3D_uwxec")
 use_collision = true
 size = Vector3(8, 9, 28.800001)
@@ -171,7 +171,7 @@ size = Vector3(1, 1, 2.7)
 [node name="Unmasked" type="Node3D" parent="." unique_id=289688921]
 
 [node name="Rubble" type="CSGBox3D" parent="Unmasked" unique_id=643265307]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.5, 13.2, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16.9, 13.2, 0)
 material_override = SubResource("StandardMaterial3D_ax3dk")
 use_collision = true
 size = Vector3(8, 8.400001, 8)
@@ -194,7 +194,7 @@ sides = 6
 [node name="Masked" type="Node3D" parent="." unique_id=365929474]
 
 [node name="Bridge" type="CSGBox3D" parent="Masked" unique_id=463335727]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 4.5, 6.906399e-07)
+transform = Transform3D(-4.371139e-08, 0, -0.7, 0, 1, 0, 1, 0, -3.059797e-08, 39.600002, 4.5, 6.906399e-07)
 material_override = SubResource("StandardMaterial3D_5xqnf")
 use_collision = true
 size = Vector3(8, 9, 24)
@@ -243,3 +243,6 @@ fragment_id = 4
 [node name="MaskFragment5" parent="." unique_id=1709027928 instance=ExtResource("8_hey2k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.628417, 10.050668, 2.7633743)
 fragment_id = 5
+
+[node name="MaskFragment" parent="." unique_id=1572411642 instance=ExtResource("5_ne2mo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 21.2, -25.9)
