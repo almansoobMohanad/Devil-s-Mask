@@ -373,14 +373,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1224, 8.8699, -64.170235)
 curve = SubResource("Curve3D_0xifx")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Pathing/Path3D" unique_id=1999522369]
-transform = Transform3D(-0.10665282, 0.025413396, -0.9939663, -1.8626434e-09, 0.9996664, 0.025559219, 0.9942954, 0.0027259625, -0.10661751, -1.7043266, -1.0688982, 4.8954926)
+transform = Transform3D(-0.10665282, 0.025413394, -0.9939663, -1.8626434e-09, 0.9996664, 0.025559217, 0.9942954, 0.0027259623, -0.10661751, -1.7043266, -1.0688982, 4.8954926)
 
 [node name="Path3D2" type="Path3D" parent="Pathing" unique_id=893692065]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.244537, 9.064232, -130.2745)
 curve = SubResource("Curve3D_0xifx")
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Pathing/Path3D2" unique_id=238671637]
-transform = Transform3D(-0.10665282, 0.025413396, -0.9939663, -1.8626434e-09, 0.9996664, 0.025559219, 0.9942954, 0.0027259625, -0.10661751, -1.7043266, -1.0688982, 4.8954926)
+transform = Transform3D(-0.10665282, 0.025413394, -0.9939663, -1.8626434e-09, 0.9996664, 0.025559217, 0.9942954, 0.0027259623, -0.10661751, -1.7043266, -1.0688982, 4.8954926)
 
 [node name="Torch" parent="." unique_id=657547207 instance=ExtResource("6_0xifx")]
 transform = Transform3D(0.013700371, 0, -0.9999061, 0, 1, 0, 0.9999061, 0, 0.013700371, 4.804486, 7.629774, -10.392832)
