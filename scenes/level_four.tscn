@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cnr041sbmnpr1"]
+[gd_scene format=3 uid="uid://1feak3pg8kr2"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_1mkaa"]
 [ext_resource type="Texture2D" uid="uid://c2igb5ydftnem" path="res://3d models/tree_brick_pavement_02_diff_4k.jpg" id="2_bxape"]
@@ -6,14 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="4_qlnma"]
 [ext_resource type="Texture2D" uid="uid://b0t6vec7grhev" path="res://3d models/tree_rock_wall_08_diff_4k.jpg" id="5_iu4sr"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="5_krb5l"]
-[ext_resource type="PackedScene" path="res://scenes/torch.tscn" id="6_0xifx"]
+[ext_resource type="PackedScene" uid="uid://duqe10xkq7uqg" path="res://scenes/torch.tscn" id="6_0xifx"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="6_iu4sr"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="7_tuwuf"]
 [ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="8_0xifx"]
-[ext_resource type="PackedScene" path="res://scenes/mask_fragment5.tscn" id="9_e2i88"]
+[ext_resource type="PackedScene" uid="uid://vo7vcx1g8mpl" path="res://scenes/mask_fragment5.tscn" id="9_e2i88"]
 [ext_resource type="AudioStream" uid="uid://cvely8j1f8h80" path="res://Assets/Sfx/416-8-bit-chiptune-instrumental-for-games-339237.mp3" id="10_iu4sr"]
-[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="11_tuwuf"]
+[ext_resource type="PackedScene" uid="uid://b0nl8aq5rpmsb" path="res://scenes/enemy.tscn" id="11_tuwuf"]
 [ext_resource type="Texture2D" uid="uid://do6opc0j6mbad" path="res://3d models/mask png/Emit.png" id="14_i0usi"]
+[ext_resource type="PackedScene" uid="uid://c6785512vorto" path="res://scenes/Door.tscn" id="15_i664h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i0usi"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -132,7 +133,7 @@ size = Vector2(300, 300)
 environment = SubResource("Environment_wfh3e")
 
 [node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") groups=["player"] instance=ExtResource("1_1mkaa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.28894, 9, -188.18108)
 main_world = NodePath("../Main")
 masked_world = NodePath("../Masked")
 unmasked_world = NodePath("../Unmasked")
@@ -471,3 +472,7 @@ light_color = Color(0.8001832, 0.41909766, 0, 1)
 light_energy = 15.229
 light_indirect_energy = 4.344
 omni_range = 157.9273
+
+[node name="Door" parent="." unique_id=831905278 instance=ExtResource("15_i664h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.618065, 10.523001, -210.85728)
+next_scene = "res://scenes/finish.tscn"
