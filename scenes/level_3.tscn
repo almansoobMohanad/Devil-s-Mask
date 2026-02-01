@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://y8vgijeo4ido"]
+[gd_scene format=3 uid="uid://by4dtq8c6x5yc"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_70nk6"]
 [ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_uwxec"]
@@ -21,8 +21,11 @@ albedo_texture = ExtResource("2_uwxec")
 
 [node name="Node3D" type="Node3D" unique_id=263277631]
 
-[node name="Player" parent="." unique_id=1256405127 instance=ExtResource("1_70nk6")]
+[node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") instance=ExtResource("1_70nk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+main_world = NodePath("../Main")
+masked_world = NodePath("../Masked")
+unmasked_world = NodePath("../Unmasked")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=895080255]
 transform = Transform3D(-0.83651626, -0.48296294, -0.258819, -0.22414388, -0.12940958, 0.9659259, -0.50000006, 0.8660255, 3.3260154e-08, 0.14321852, 0, 8.151346)
