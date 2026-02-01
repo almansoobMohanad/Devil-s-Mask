@@ -1,8 +1,13 @@
-[gd_scene format=3 uid="uid://0kel41mk6wh8"]
+[gd_scene format=3 uid="uid://ddhp80jfrd3nd"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_3bmlt"]
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_b4j7a"]
 [ext_resource type="Texture2D" uid="uid://1qhwr531tuo7" path="res://Assets/rogland_clear_night_4k.exr" id="2_pbc48"]
+[ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_eqxsl"]
+[ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_ne2mo"]
+[ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_6cvei"]
+[ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="7_que50"]
+[ext_resource type="PackedScene" path="res://scenes/mask_fragment.tscn" id="8_hey2k"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_eqxsl"]
 panorama = ExtResource("2_pbc48")
@@ -58,8 +63,11 @@ albedo_texture = ExtResource("2_b4j7a")
 
 [node name="Node3D" type="Node3D" unique_id=945736449]
 
-[node name="Player" parent="." unique_id=1256405127 instance=ExtResource("1_3bmlt")]
+[node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") groups=["player"] instance=ExtResource("1_3bmlt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5, -0.1)
+main_world = NodePath("../Main")
+masked_world = NodePath("../Masked")
+unmasked_world = NodePath("../Unmasked")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1126383142]
 transform = Transform3D(-0.8660254, -0.5000001, -2.1855698e-08, 0, -4.371139e-08, 1, -0.5000001, 0.8660254, 3.7855166e-08, 3.1000001, 8, 5.8)
@@ -169,7 +177,7 @@ use_collision = true
 size = Vector3(8, 8.400001, 8)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Unmasked" unique_id=2116280817]
-transform = Transform3D(-12.1706705, 0, 2.9505384, 0, 2, 0, -3.261124, 0, -11.011555, 40.301754, 9.32547, -25.952732)
+transform = Transform3D(-12.1706705, 0, 2.9505384, 0, 2, 0, -3.261124, 0, -11.011555, 40.301754, 5.82547, -25.952732)
 material_override = SubResource("StandardMaterial3D_q2dsb")
 use_collision = true
 height = 18.153906
@@ -215,3 +223,23 @@ transform = Transform3D(1.0000007, 0, 4.2349555e-09, 0, 1, 0, -4.235382e-09, 0, 
 use_collision = true
 height = 9.94375
 sides = 6
+
+[node name="MaskFragment1" parent="." unique_id=2051958364 instance=ExtResource("4_eqxsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.766943, 9.941629, -0.055437088)
+fragment_id = 1
+
+[node name="MaskFragment2" parent="." unique_id=630639763 instance=ExtResource("5_ne2mo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2477794, 10.050668, -0.6985321)
+fragment_id = 2
+
+[node name="MaskFragment3" parent="." unique_id=1658850588 instance=ExtResource("6_6cvei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.628417, 10.050668, -0.6985321)
+fragment_id = 3
+
+[node name="MaskFragment4" parent="." unique_id=1152815010 instance=ExtResource("7_que50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7432604, 10.050668, 2.7633743)
+fragment_id = 4
+
+[node name="MaskFragment5" parent="." unique_id=1709027928 instance=ExtResource("8_hey2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.628417, 10.050668, 2.7633743)
+fragment_id = 5

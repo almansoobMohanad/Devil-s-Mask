@@ -1,6 +1,6 @@
-[gd_scene format=4 uid="uid://dpicvyibvktnc"]
+[gd_scene format=4 uid="uid://cshqrkt5ih80y"]
 
-[ext_resource type="Script" path="res://scenes/mask_fragment.gd" id="1_ltbkj"]
+[ext_resource type="Script" uid="uid://d2euf3sxm5pcs" path="res://scenes/mask_fragment.gd" id="1_ltbkj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_36g3t"]
 radius = 0.6

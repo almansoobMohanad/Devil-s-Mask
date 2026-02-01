@@ -21,7 +21,7 @@ albedo_texture = ExtResource("2_6malg")
 [node name="Node3D" type="Node3D" unique_id=263277631]
 
 [node name="Player" parent="." unique_id=1256405127 instance=ExtResource("1_huvaw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 11.8, -99.299995)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=895080255]
 transform = Transform3D(-0.83651626, -0.48296294, -0.258819, -0.22414388, -0.12940958, 0.9659259, -0.50000006, 0.8660255, 3.3260154e-08, 0.14321852, 0, 8.151346)
