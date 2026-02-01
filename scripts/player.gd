@@ -173,6 +173,10 @@ func maskNextLevel() -> void:
 func armPlayer() -> void:
 	isArmed = true
 
+func _process(delta):
+	if position.y < 0: # adjust threshold
+		game_over()  # call your game over function directly
+
 func game_over() -> void:
 	print("Game Over!")
 	emit_signal("Game Over")
