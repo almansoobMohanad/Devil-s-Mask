@@ -187,6 +187,12 @@ material_override = SubResource("StandardMaterial3D_56dhn")
 operation = 2
 size = Vector3(1, 1, 2.7)
 
+[node name="Torch9" parent="Main/Mask Shrine" unique_id=948839827 instance=ExtResource("5_igmy8")]
+transform = Transform3D(-0.010680334, 0, -0.23785631, 0, 1.0000795, 0, 0.23785569, 0, -0.010680164, 0.85032773, 6.812153, 1.2125816)
+
+[node name="Torch10" parent="Main/Mask Shrine" unique_id=1678226646 instance=ExtResource("5_igmy8")]
+transform = Transform3D(-0.010680334, 0, -0.23785631, 0, 1.0000795, 0, 0.23785569, 0, -0.010680164, -0.75049376, 6.812153, 1.2125816)
+
 [node name="Bridge5" type="CSGBox3D" parent="Main" unique_id=507614556]
 transform = Transform3D(-1, 0, 5.2453668e-08, 0, 3.3810003, 0, -8.742278e-08, 0, -0.6, 79, 1.815, -16.5)
 material_override = SubResource("StandardMaterial3D_bgibu")
@@ -199,7 +205,7 @@ operation = 2
 height = 9.05
 sides = 22
 
-[node name="Torch2" parent="Main" unique_id=948839827 instance=ExtResource("5_igmy8")]
+[node name="Torch2" parent="Main" unique_id=285959928 instance=ExtResource("5_igmy8")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 17.958529, 6.254918, 4.7341275)
 
 [node name="Torch3" parent="Main" unique_id=1126849806 instance=ExtResource("5_igmy8")]
