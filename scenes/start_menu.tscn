@@ -37,4 +37,4 @@ text = "Options"
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
