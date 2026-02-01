@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://y8vgijeo4ido"]
+[gd_scene format=3 uid="uid://by4dtq8c6x5yc"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_70nk6"]
 [ext_resource type="Texture2D" uid="uid://u6023a7kpfpd" path="res://3d models/textures/damp-dungeon-floor_albedo.png" id="2_uwxec"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="3_1pn4d"]
+[ext_resource type="AudioStream" uid="uid://cw7gbhdxd07ac" path="res://Assets/Sfx/356-8-bit-chiptune-game-music-357518.mp3" id="4_1pn4d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6malg"]
 albedo_texture = ExtResource("2_uwxec")
@@ -586,3 +587,7 @@ size = Vector3(0.3, 1, 0.3)
 
 [node name="MaskFragment" parent="." unique_id=2051958364 instance=ExtResource("3_1pn4d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 0.8, -3.3)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1825308381]
+stream = ExtResource("4_1pn4d")
+autoplay = true
