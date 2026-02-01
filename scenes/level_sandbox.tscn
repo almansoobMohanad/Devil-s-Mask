@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_e3sih"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="7_2os1m"]
-[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="9_e3sih"]
+[ext_resource type="PackedScene" uid="uid://c7onnyw72ot4a" path="res://scenes/enemy.tscn" id="9_e3sih"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ilcil"]
 size = Vector3(60, 1, 30)
@@ -17,13 +17,7 @@ albedo_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_hbghi"]
 size = Vector3(60, 1, 30)
 
-[sub_resource type="Curve3D" id="Curve3D_e3sih"]
-closed = true
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.4396133, -1.341166, 2.556178, 0, 0, 0, 0, 0, 0, 17.133514, 0.46321964, 6.608884),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
+[sub_resource type="Curve3D" id="Curve3D_pa8r4"]
 
 [node name="Level 1" type="Node3D" unique_id=294888273]
 
@@ -69,3 +63,9 @@ fragment_id = 5
 
 [node name="Enemy" parent="Enemies" unique_id=1293850703 instance=ExtResource("9_e3sih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.607176, 3.0741343, 0)
+path_follow_path = NodePath("../../Path3D/PathFollow3D")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1768129282]
+curve = SubResource("Curve3D_pa8r4")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1184637598]

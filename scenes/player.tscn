@@ -814,3 +814,5 @@ stream = ExtResource("14_fulsm")
 
 [node name="sfx_take_damage" type="AudioStreamPlayer3D" parent="." unique_id=2097665060]
 stream = ExtResource("15_4r5pv")
+
+[node name="Timer" type="Timer" parent="." unique_id=561761991]
