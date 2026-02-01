@@ -793,3 +793,5 @@ skin = SubResource("Skin_er06a")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Man" unique_id=1262302714]
 libraries/ = SubResource("AnimationLibrary_ur7pv")
 libraries/Global = SubResource("AnimationLibrary_d2wvv")
+
+[node name="Timer" type="Timer" parent="." unique_id=561761991]
