@@ -30,6 +30,12 @@ var can_world_transform : bool = true
 @onready var anim_player = $Man/AnimationPlayer
 @onready var model = $Man  # Reference to the visual model
 
+@onready var sfx_jump: AudioStreamPlayer3D = $sfx_jump
+@onready var sfx_game_over: AudioStreamPlayer3D = $sfx_game_over
+@onready var sfx_masknextlevel: AudioStreamPlayer3D = $sfx_masknextlevel
+@onready var sfx_update_power: AudioStreamPlayer3D = $sfx_update_power
+@onready var sfx_take_damage: AudioStreamPlayer3D = $sfx_take_damage
+
 func _ready() -> void:
 	# Connect to animation finished signal
 	anim_player.animation_finished.connect(_on_animation_finished)
@@ -61,7 +67,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true  # Mark that we're jumping
 		#anim_player.play("Global/metarig_walking")  # Play jump animation immediately
-	
+		sfx_jump.play()
 	# Handle Transform (E key) - Now toggles world transformation
 	if Input.is_action_just_pressed("transform") and not is_transforming and can_world_transform:
 		is_transforming = true
@@ -137,6 +143,7 @@ func update_animation(direction: Vector3):
 func take_damage(amount: int) -> void:
 	print("Player took ", amount, " damage!")
 	health -= amount
+	sfx_take_damage.play()
 	if health <= 0:
 		game_over()
 
@@ -159,6 +166,7 @@ func maskWorn() -> void:
 
 func maskNextLevel() -> void:
 	maskLevel += 1
+	sfx_masknextlevel.play()
 
 func armPlayer() -> void:
 	isArmed = true
@@ -166,6 +174,7 @@ func armPlayer() -> void:
 func game_over() -> void:
 	print("Game Over!")
 	emit_signal("Game Over")
+	sfx_game_over.play()
 	# Implement game over logic here (e.g., restart level, show game over screen, etc.)
 
 # World Transformation Functions
@@ -264,6 +273,7 @@ func add_mask_fragment(id: int):
 	update_player_power()
 
 func update_player_power():
+	sfx_update_power.play()
 	pass
 
 func get_remaining_transform_time() -> float:
