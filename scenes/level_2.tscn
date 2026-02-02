@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b0nl8aq5rpmsb" path="res://scenes/enemy.tscn" id="4_6cvei"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_eqxsl"]
 [ext_resource type="PackedScene" uid="uid://duqe10xkq7uqg" path="res://scenes/torch.tscn" id="5_igmy8"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="4_6cvei"]
+[ext_resource type="PackedScene" path="res://scenes/torch.tscn" id="5_igmy8"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_ne2mo"]
-[ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_6cvei"]
 [ext_resource type="Texture2D" uid="uid://b8vv00lfo28pn" path="res://3d models/tree_rock_wall_13_diff_4k.jpg" id="6_wdtqu"]
 [ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="7_que50"]
 [ext_resource type="PackedScene" uid="uid://cshqrkt5ih80y" path="res://scenes/mask_fragment.tscn" id="8_hey2k"]
@@ -320,26 +321,6 @@ transform = Transform3D(1.0000007, 0, 4.2349555e-09, 0, 1, 0, -4.235382e-09, 0, 
 use_collision = true
 height = 9.94375
 sides = 6
-
-[node name="MaskFragment1" parent="." unique_id=2051958364 instance=ExtResource("4_eqxsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.330021, 9.999069, -0.055437088)
-fragment_id = 1
-
-[node name="MaskFragment2" parent="." unique_id=630639763 instance=ExtResource("5_ne2mo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8108573, 10.108108, -0.6985321)
-fragment_id = 2
-
-[node name="MaskFragment3" parent="." unique_id=1658850588 instance=ExtResource("6_6cvei")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.628417, 10.050668, -0.6985321)
-fragment_id = 3
-
-[node name="MaskFragment4" parent="." unique_id=1152815010 instance=ExtResource("7_que50")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.069512, 10.050668, 2.7633743)
-fragment_id = 4
-
-[node name="MaskFragment5" parent="." unique_id=1709027928 instance=ExtResource("8_hey2k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.628417, 10.050668, 2.7633743)
-fragment_id = 5
 
 [node name="MaskFragment" parent="." unique_id=1572411642 instance=ExtResource("5_ne2mo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 21.2, -25.9)
