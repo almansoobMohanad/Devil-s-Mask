@@ -1,19 +1,20 @@
-[gd_scene format=3 uid="uid://crj7x2rgsjfa7"]
+[gd_scene format=3 uid="uid://0kel41mk6wh8"]
 
 [ext_resource type="PackedScene" uid="uid://cw61fqck3ii81" path="res://scenes/player.tscn" id="1_3bmlt"]
 [ext_resource type="Texture2D" uid="uid://cvi8fhh1ikpe8" path="res://3d models/textures/bake.png" id="2_b4j7a"]
 [ext_resource type="Texture2D" uid="uid://c2igb5ydftnem" path="res://3d models/tree_brick_pavement_02_diff_4k.jpg" id="2_fldb1"]
 [ext_resource type="Texture2D" uid="uid://d0f5ahpn8dswx" path="res://3d models/tree_mossy_brick_diff_4k.jpg" id="3_guvtl"]
-[ext_resource type="PackedScene" uid="uid://c7onnyw72ot4a" path="res://scenes/enemy.tscn" id="4_6cvei"]
+[ext_resource type="PackedScene" uid="uid://b0nl8aq5rpmsb" path="res://scenes/enemy.tscn" id="4_6cvei"]
 [ext_resource type="PackedScene" uid="uid://dpicvyibvktnc" path="res://scenes/mask_fragment1.tscn" id="4_eqxsl"]
-[ext_resource type="PackedScene" path="res://scenes/torch.tscn" id="5_igmy8"]
+[ext_resource type="PackedScene" uid="uid://duqe10xkq7uqg" path="res://scenes/torch.tscn" id="5_igmy8"]
 [ext_resource type="PackedScene" uid="uid://ho36o55kjxsx" path="res://scenes/mask_fragment2.tscn" id="5_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://0vs5m05d34m4" path="res://scenes/mask_fragment3.tscn" id="6_6cvei"]
 [ext_resource type="Texture2D" uid="uid://b8vv00lfo28pn" path="res://3d models/tree_rock_wall_13_diff_4k.jpg" id="6_wdtqu"]
 [ext_resource type="PackedScene" uid="uid://cbm4l617f7xbn" path="res://scenes/mask_fragment4.tscn" id="7_que50"]
-[ext_resource type="PackedScene" path="res://scenes/mask_fragment.tscn" id="8_hey2k"]
+[ext_resource type="PackedScene" uid="uid://cshqrkt5ih80y" path="res://scenes/mask_fragment.tscn" id="8_hey2k"]
 [ext_resource type="AudioStream" uid="uid://drrxqhch6xvu4" path="res://Assets/Sfx/red-e-8-bit-chiptune-for-retro-gaming-356128.mp3" id="10_que50"]
 [ext_resource type="Texture2D" uid="uid://do6opc0j6mbad" path="res://3d models/mask png/Emit.png" id="14_7qsfm"]
+[ext_resource type="PackedScene" uid="uid://c6785512vorto" path="res://scenes/Door.tscn" id="15_guvtl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bv48q"]
 albedo_texture = ExtResource("2_fldb1")
@@ -91,6 +92,7 @@ size = Vector2(300, 300)
 
 [node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") groups=["player"] instance=ExtResource("1_3bmlt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 10.5, -0.1)
+starting_fragments = 2
 main_world = NodePath("../Main")
 masked_world = NodePath("../Masked")
 unmasked_world = NodePath("../Unmasked")
@@ -347,7 +349,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.07262, 19.367388, -26.2932
 curve = SubResource("Curve3D_6cvei")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1091513477]
-transform = Transform3D(-0.034911513, -0.005169998, -0.9993747, 2.3282998e-10, 0.99998564, -0.0051731444, 0.99938756, -0.00018060328, -0.034911066, 0.2362976, -0.07530403, 0.31053352)
+transform = Transform3D(-0.034911513, -0.005169998, -0.9993748, 2.3282998e-10, 0.99998564, -0.005173145, 0.99938756, -0.00018060328, -0.03491107, 0.2362976, -0.07530403, 0.31053352)
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=350822942]
 stream = ExtResource("10_que50")
@@ -371,3 +373,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.864555, 11.061018, -9.8)
 light_color = Color(0.8001832, 0.41909766, 0, 1)
 light_energy = 15.229
 omni_range = 142.34135
+
+[node name="Door" parent="." unique_id=831905278 instance=ExtResource("15_guvtl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.914761, 22.161606, -26.320873)
+next_scene = "res://scenes/level_3.tscn"

@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://d3m42pg7s6bsg"]
+[gd_scene format=3 uid="uid://dxomlybj7n4ds"]
 
 [ext_resource type="AudioStream" uid="uid://ddd5ptmapf5xu" path="res://Assets/Sfx/15sec-2021-08-16_-_8_Bit_Adventure_-_www.FesliyanStudios.com.mp3" id="1_m504p"]
 [ext_resource type="AudioStream" uid="uid://mnwa07joc040" path="res://Assets/Sfx/game-start-6104.mp3" id="2_n8g1v"]
-[ext_resource type="Script" uid="uid://bc44qoie2lyh1" path="res://scenes/Gameover_Restart.gd" id="3_q7jsg"]
+[ext_resource type="Script" path="res://scenes/Gameover_Restart.gd" id="3_q7jsg"]
 [ext_resource type="Texture2D" uid="uid://c32ofulqdt1wv" path="res://Assets/squid-game-frontman-3840x2160-20903.png" id="4_tr3gj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
@@ -18,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1219026664]
 layout_mode = 1

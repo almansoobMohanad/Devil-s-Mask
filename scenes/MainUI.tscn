@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://8134v7mexdn4"]
+
+[ext_resource type="Script" uid="uid://dm0a76heh7q20" path="res://scenes/start_menu.gd" id="1_74o4q"]
+[ext_resource type="Texture2D" uid="uid://dooew775mw6ni" path="res://Assets/GAME_SCREEN2.png" id="2_tuc0m"]
+[ext_resource type="AudioStream" uid="uid://dmd1mo8xf7gm1" path="res://Assets/Sfx/game-music-7408.mp3" id="3_ore7p"]
+[ext_resource type="AudioStream" uid="uid://mnwa07joc040" path="res://Assets/Sfx/game-start-6104.mp3" id="4_3iiao"]
+
+[node name="MainUi" type="Control" unique_id=1151458192]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_74o4q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=838897304]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -33.0
+offset_right = 23.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=2074934346]
+layout_mode = 2
+text = "Start"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=804934396]
+layout_mode = 2
+text = "Quit"
+
+[node name="GameScreen2" type="Sprite2D" parent="VBoxContainer" unique_id=1119972928]
+z_index = -1
+position = Vector2(36, 84)
+scale = Vector2(0.7731482, 0.7731481)
+texture = ExtResource("2_tuc0m")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2047851946]
+stream = ExtResource("3_ore7p")
+volume_db = -0.6
+autoplay = true
+
+[node name="click" type="AudioStreamPlayer" parent="." unique_id=508885844]
+stream = ExtResource("4_3iiao")
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

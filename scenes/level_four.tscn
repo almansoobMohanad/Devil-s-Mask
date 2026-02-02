@@ -133,7 +133,8 @@ size = Vector2(300, 300)
 environment = SubResource("Environment_wfh3e")
 
 [node name="Player" parent="." unique_id=1256405127 node_paths=PackedStringArray("main_world", "masked_world", "unmasked_world") groups=["player"] instance=ExtResource("1_1mkaa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.28894, 9, -188.18108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+starting_fragments = 4
 main_world = NodePath("../Main")
 masked_world = NodePath("../Masked")
 unmasked_world = NodePath("../Unmasked")
